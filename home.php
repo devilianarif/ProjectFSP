@@ -21,12 +21,25 @@
             background: #0a0a0a;
         }
 
-        #logo {
+         #logo {
             cursor: pointer;
             display: inline-block;
             transition: transform 0.3s ease;
             z-index: 102;
-            position: relative;
+            position: absolute;
+            background-color: #6A6E85;
+            border: none;
+            color: white;
+            padding: 10px 20px; /* Kurangi padding */
+            text-align: center;
+            font-size: 14px; /* Kurangi ukuran font */
+            width: 180px; /* Ukuran lebar logo */
+            border-radius: 6px;
+            clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+            top: -60px; /* Geser ke atas jika diperlukan */
+            left: 50%;
+            transform: translateX(-50%);
+        
         }
 
         #nav-menu {
@@ -110,15 +123,25 @@
 
         .hero .btn {
             position: relative;
-            top: -150px; /* Menggeser tombol ke atas */
-            background-color: #ff0000;
+            top: -400px; /* Menggeser tombol ke atas */
             padding: 15px 30px;
-            color: #fff;
             text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s ease;
             z-index: 2;
-        }
+            background-color: #ff0000; /* Red color */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            width: 200px;
+            border-radius: 6px;
+            clip-path: polygon(0 0, 100% 0, 80% 150%, 20% 150%);
+                }
 
         .hero .btn:hover {
             background-color: #cc0000;
