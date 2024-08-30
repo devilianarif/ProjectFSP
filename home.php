@@ -7,21 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menyatukan Trapesium</title>
     <style>
-    body, html {
+    body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    body {
+    font-family: Arial, sans-serif; 
+    overflow-x: hidden; /* Menghindari scroll horizontal */
     background: linear-gradient(to right, #0c1d37, #332949); /* Dari kiri ke kanan */
 }
-
+html {
+    scroll-behavior: smooth;
 }
 
+
 header {
-    position: relative;
-    text-align: center;
-    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 102; /* Pastikan z-index lebih tinggi dari elemen lainnya */
+    background: linear-gradient(to right, #322771, #1d1146); /* Background gradient */
+    width: 100%;
 }
 
 #logo {
@@ -50,7 +54,7 @@ header {
     display: none; /* Awalnya tersembunyi */
     justify-content: space-between;
     position: absolute;
-    top: 0;
+    top: 30px;
     left: 0;
     right: 0;
     height: 100%;
@@ -211,17 +215,33 @@ header {
 .hero-box {
     position: relative;
     width: 100%;
-    height: 400px; /* Sesuaikan tinggi sesuai kebutuhan */
+    height: 750px; /* Sesuaikan tinggi sesuai kebutuhan */
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    background: #0c1d37; /* Background warna untuk fallback */
+}
+.hero-box img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%; /* Lebih besar dari container untuk efek parallax */
+    height: auto;
+    transform: translate(-50%, -50%) scale(1); /* Mulai tanpa zoom */
+    object-fit: cover; /* Memastikan gambar menutupi seluruh area */
+    z-index: 1;
+    will-change: transform; /* Mengoptimalkan performa animasi */
+    animation: zoom 20s infinite alternate; /* Menambahkan animasi zoom */
 }
 
-.hero-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Memastikan gambar menutupi seluruh area */
-    opacity: 0.8;
+@keyframes zoom {
+    0% {
+        transform: translate(-50%, -50%) scale(1); /* Mulai dengan ukuran normal */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.2); /* Zoom in */
+    }
 }
 
 .dark-overlay {
@@ -230,7 +250,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 2;
 }
 
@@ -246,10 +266,50 @@ header {
 .hero-content h1 {
     font-size: 3em;
     background-color: rgba(29, 48, 79, 0.7);
-	color:white;
+    color:white;
     display: inline-block;
     padding: 10px 80px;
     margin: 0;
+}
+.scroll-down {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    bottom: -95px; /* Jarak dari bagian bawah hero-box */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.scroll-down:hover {
+    opacity: 1;
+    color: #c23369; /* Warna border saat hover */
+}
+
+.scroll-down:after {
+    content: '↓';
+    display: block;
+    font-size: 1.5em;
+    margin-top: 5px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
 .hero-content .btn {
@@ -405,7 +465,7 @@ header {
 <body>
     <header>
         <div id="logo" onclick="toggleMenu()">
-            <img src="https://picsum.photos/50" alt="Logo">
+            <img width="70" height="60" src="https://playerx.qodeinteractive.com/wp-content/uploads/2018/06/logo-header.png" alt="Logo">
         </div>
       <nav id="nav-menu">
     <ul class="left-menu">
@@ -419,15 +479,18 @@ header {
 </nav>
 
     </header>
-  <br>  
+
 <section class="hero">
     <div class="hero-box">
-        <img src="https://picsum.photos/800/400" alt="Background Banner">
+        <img src="https://playerx.qodeinteractive.com/wp-content/uploads/2018/06/landing-slider-top-background-img-1.jpg" alt="Background Banner">
         <div class="dark-overlay"></div>
         <div class="hero-content">
             <h1>REPEL THE INVADERS!</h1>
             <a href="#" class="btn">JOIN NOW</a>
-        </div>
+              <!-- Scroll Down Text -->
+             <div class="scroll-down" onclick="scrollToDescription()">
+                Scroll Down
+            </div>
     </div>
 </section>
     <section class="partners">
@@ -475,6 +538,11 @@ header {
             
             isOpen = !isOpen;
         }
+        //scrolldown
+      function scrollToDescription() {
+    document.querySelector('.description').scrollIntoView({ behavior: 'smooth' });
+}
+
     </script>
 </body>
 </html>
