@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menyatukan Trapesium</title>
@@ -460,6 +460,79 @@ header {
 }
 
 
+
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+      padding: 50px 0;
+    }
+
+    .swiper-slide {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      background-position: center;
+      background-size: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      color: white;
+      overflow: hidden;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      border-radius: 10px;
+    }
+
+    .swiper-slide span {
+      position: relative;
+      font-weight: bold;
+      font-size: 18px;
+      z-index: 1;
+      margin-bottom: 10px;
+    }
+
+    .swiper-slide div {
+      position: relative;
+      z-index: 1;
+    }
+
+    .swiper-slide h2 {
+      font-size: 22px;
+      margin: 0 0 10px;
+    }
+
+    .swiper-slide p {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .swiper-slide p svg {
+      margin-right: 10px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .swiper-pagination {
+      bottom: 30px;
+    }
+
+    .swiper-pagination-bullet {
+      background: white;
+    }
 </style>
 </head>
 <body>
@@ -482,7 +555,7 @@ header {
 
 <section class="hero">
     <div class="hero-box">
-        <img src="aset/game3.jpg" alt="PUBG Mobile Logo">
+        <img src="aset/game3.jpg" ></div>
         <div class="dark-overlay"></div>
         <div class="hero-content">
             <h1>Club e-Sport INFORMATICS</h1>
@@ -492,6 +565,7 @@ header {
                 Scroll Down
             </div>
     </div>
+    
 </section>
     <section class="partners">
         <img src="aset/logoRog.png" alt="logo asuz">
@@ -502,6 +576,85 @@ header {
         <img src="aset/logoDota.png" alt="logo dota">
         
     </section>
+    
+    
+    <section>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://source.unsplash.com/1600x900/?hawaii" alt="Hawaii">
+        <span>domestic</span>
+        <div>
+          <h2>Enjoy the exotic of sunny Hawaii</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Maui, Hawaii
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://source.unsplash.com/1600x900/?lanzarote" alt="Lanzarote">
+        <span>subtropical</span>
+        <div>
+          <h2>The Island of Eternal Spring</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Lanzarote, Spain
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://source.unsplash.com/1600x900/?eiffel-tower" alt="Eiffel Tower">
+        <span>history</span>
+        <div>
+          <h2>Awesome Eiffel Tower</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Paris, France
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://source.unsplash.com/1600x900/?yucatan" alt="Yucatan">
+        <span>Mayans</span>
+        <div>
+          <h2>One of the safest states in Mexico</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            The Yucatan, Mexico
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://source.unsplash.com/1600x900/?whitsunday-islands" alt="Whitsunday Islands">
+        <span>native</span>
+        <div>
+          <h2>The most popular yachting destination</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Whitsunday Islands, Australia
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 <section class="description">
 <h2>
   An  <span class="highlight">OP</span> The Just for Gamers
@@ -542,7 +695,36 @@ header {
       function scrollToDescription() {
     document.querySelector('.description').scrollIntoView({ behavior: 'smooth' });
 }
+</script>
 
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 2,
+      slideShadows: true
+    },
+    keyboard: {
+      enabled: true
+    },
+    mousewheel: {
+      thresholdDelta: 70
+    },
+    spaceBetween: 60,
+    loop: true,
+    loopedSlides: 5, // This makes the loop smoother by duplicating slides
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    }
+  });
+</script>
 </body>
 </html>
