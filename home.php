@@ -465,7 +465,7 @@ header {
 <body>
     <header>
         <div id="logo" onclick="toggleMenu()">
-            <img width="70" height="60" src="https://playerx.qodeinteractive.com/wp-content/uploads/2018/06/logo-header.png" alt="Logo">
+            <img width="90" height="80" src="aset/BLINC GAMES.png" alt="blinc Logo" alt="Logo">
         </div>
       <nav id="nav-menu">
     <ul class="left-menu">
@@ -482,10 +482,10 @@ header {
 
 <section class="hero">
     <div class="hero-box">
-        <img src="https://playerx.qodeinteractive.com/wp-content/uploads/2018/06/landing-slider-top-background-img-1.jpg" alt="Background Banner">
+        <img src="aset/game3.jpg" alt="PUBG Mobile Logo">
         <div class="dark-overlay"></div>
         <div class="hero-content">
-            <h1>REPEL THE INVADERS!</h1>
+            <h1>Club e-Sport INFORMATICS</h1>
             <a href="#" class="btn">JOIN NOW</a>
               <!-- Scroll Down Text -->
              <div class="scroll-down" onclick="scrollToDescription()">
@@ -494,12 +494,12 @@ header {
     </div>
 </section>
     <section class="partners">
-        <img src="https://picsum.photos/200" alt="SteelSeries">
-        <img src="https://picsum.photos/200" alt="Razer">
-        <img src="https://picsum.photos/200" alt="Roccat">
-        <img src="https://picsum.photos/200" alt="Gunnar">
-        <img src="https://picsum.photos/200" alt="Gunnar">
-        <img src="https://picsum.photos/200" alt="Gunnar">
+        <img src="aset/logoRog.png" alt="logo asuz">
+        <img src="aset/logoPredator.png" alt="logo acer">
+        <img src="aset/logoLogitech.png" alt="logitect">
+        <img src="aset/logoLegion.png" alt="logo legion">
+        <img src="aset/logoEpic.png" alt="epic game">
+        <img src="aset/logoDota.png" alt="logo dota">
         
     </section>
 <section class="description">
