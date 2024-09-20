@@ -1,5 +1,6 @@
 	<?php
 	$conn = new mysqli("localhost", "root", "", "fspproject");
+				//port user pw db
 	if ($conn->connect_errno) {
     	die("Failed to connect to MySQL: " . $conn->connect_error);
 	}
