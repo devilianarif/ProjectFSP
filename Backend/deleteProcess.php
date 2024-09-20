@@ -1,8 +1,5 @@
 <?php //Connection & Function
-	$conn = new mysqli("localhost", "root", "", "fspproject");
-	if ($conn->connect_errno) {
-    	die("Failed to connect to MySQL: " . $conn->connect_error);
-	}
+	include 'connection.php';
 
 	function querry($conn, $sql, $params = [], $param_types = ''){
 		$stmt = $conn->prepare($sql);
