@@ -1,0 +1,263 @@
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+
+.edit-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 20px;
+  background-color: #ffffff00;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+ margin-right: 20px; /* Tambahkan margin kanan untuk memberi jarak antara form dan box gambar */
+}
+
+
+.form-wrapper label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.form-wrapper input, 
+.form-wrapper textarea {
+  width: 500px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #0700ff;
+  border-radius: 5px;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+}
+
+.form-wrapper textarea {
+  height: 100px;
+  resize: none;
+}
+
+[type=color], 
+[type=date], 
+[type=datetime-local], 
+[type=datetime], 
+[type=email], 
+[type=month], 
+[type=number], 
+[type=password], 
+[type=search], 
+[type=tel], 
+[type=text], 
+[type=time], 
+[type=url], 
+[type=week], 
+textarea {
+  background-color: transparent;
+  border: 1px solid #ccc; /* Optional: Add a border if needed */
+  border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+  padding: 10px; /* Optional: Adjust padding as needed */
+  font-family: "Raleway", sans-serif; /* Match the font-family if needed */
+  font-size: 14px; /* Match the font-size if needed */
+}
+
+.box {
+  display: block;
+  min-width: 300px;
+  height: 300px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  margin-left: 20px; /* Tambahkan margin kiri jika perlu menambah jarak lebih lanjut */
+}
+.upload-options {
+  position: relative;
+  height: 75px;
+  background-color: #46519e;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  transition: background-color ease-in-out 150ms;
+}
+.upload-options:hover {
+  background-color: #318354;
+}
+.upload-options input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.upload-options label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+}
+.upload-options label::after {
+  content: "cloud_upload";
+  font-family: "Material Icons";
+  position: absolute;
+  font-size: 2.5rem;
+  color: #e6e6e6;
+  top: calc(50% - 2.5rem);
+  left: calc(50% - 1.25rem);
+  z-index: 0;
+}
+.upload-options label span {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+  text-align: center;
+}
+.upload-options label span:hover i.material-icons {
+  color: lightgray;
+}
+
+.js--image-preview {
+  height: 225px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.js--image-preview img {
+  height: 100%;
+  width: 100%;
+  max-width: 100%; 
+  object-fit: cover;
+  display: block;
+}
+
+
+.js--image-preview::after {
+  content: "photo_size_select_actual";
+  font-family: "Material Icons";
+  position: relative;
+  font-size: 4.5em;
+  color: #e6e6e6;
+  top: calc(50% - 3rem);
+  left: calc(50% - 2.25rem);
+  z-index: 0;
+}
+
+.js--image-preview.js--no-default::after {
+  display: none;
+}
+.js--image-preview:nth-child(2) {
+  background-image: url("http://bastianandre.at/giphy.gif");
+}
+
+i.material-icons {
+  transition: color 100ms ease-in-out;
+  font-size: 2.25em;
+  line-height: 55px;
+  color: white;
+  display: block;
+}
+
+.drop {
+  display: block;
+  position: absolute;
+  background: rgba(95, 158, 160, 0.2);
+  border-radius: 100%;
+  transform: scale(0);
+}
+
+.animate {
+  -webkit-animation: ripple 0.4s linear;
+          animation: ripple 0.4s linear;
+}
+
+@-webkit-keyframes ripple {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+
+@keyframes ripple {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+
+.update {
+  background-color: #4c59afde;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  height: 45px;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
+}
+
+.update .text,
+.update .icon {
+  position: absolute;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.update .text {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.update .icon {
+  transform: translateY(100%);
+  opacity: 0;
+  font-size: 24px;
+}
+
+.update.active .text {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.update.active .icon {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.update:hover {
+  background-color: #45a049;
+}
+
+.update:focus {
+  outline: none;
+}
