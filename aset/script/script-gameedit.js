@@ -1,4 +1,30 @@
-   $(function () {
+function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('image-preview');
+                output.src = reader.result;
+                document.getElementById('file-name').textContent = event.target.files[0].name;
+                const progressBarFill = document.getElementById('progress-bar-fill');
+                const progressPercentage = document.getElementById('progress-percentage');
+                progressBarFill.style.width = '0';
+                progressPercentage.textContent = '0%';
+                let percentage = 0;
+                const interval = setInterval(() => {
+                    if (percentage >= 100) {
+                        clearInterval(interval);
+                    } else {
+                        percentage += 1;
+                        progressBarFill.style.width = percentage + '%';
+                        progressPercentage.textContent = percentage + '%';
+                    }
+                }, 10);
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+
+
+           $(function () {
  $(".menu-link").click(function () {
   $(".menu-link").removeClass("is-active");
   $(this).addClass("is-active");
@@ -64,19 +90,4 @@ $(".status-button:not(.open)").click(function () {
 
 $(".pop-up .close").click(function () {
  $(".pop-up").removeClass("visible");
-});
-
-
-  const cardsContainer = document.querySelector(".kontai");
-
-cardsContainer.addEventListener("click", (e) => {
-  const target = e.target.closest(".card");
-
-  if (!target) return;
-
-  cardsContainer.querySelectorAll(".card").forEach((card) => {
-    card.classList.remove("active");
-  });
-
-  target.classList.add("active");
 });
