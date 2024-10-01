@@ -346,6 +346,7 @@ img {
 .content-wrapper {
   display: flex;
   flex-direction: column;
+  
   color: #f9fafb;
   padding: 20px 40px;
   height: 100%;
@@ -358,17 +359,13 @@ img {
   }
 }
 .content-wrapper-header {
-  display: flex;
+display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  justify-content: space-between;
-background-image: url("https://www.transparenttextures.com/patterns/cubes.png"), linear-gradient(
-    to right top, 
-    #ff0000, /* Neon Red */
-    #0000ff  /* Neon Blue */
-);
   border-radius: 14px;
-  padding: 20px 40px;
+  padding: 10px 20px;
+  background-color:rgb(146 151 179 / 13%);
 }
 @media screen and (max-width: 415px) {
   .content-wrapper-header {
@@ -438,6 +435,24 @@ background-image: url("https://www.transparenttextures.com/patterns/cubes.png"),
   transition: 0.3s;
   white-space: nowrap;
 }
+
+.open-upload{
+   background-color: #7c2dfc;
+  border: none;
+  padding: 8px 20px;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+  margin-right: 10px; /* Add margin to create space between buttons */
+}
+
+.open-upload:hover {
+  background-color: #1e59f1;
+}
+
+
 
 .content-wrapper-img {
   width: 186px;
@@ -673,6 +688,60 @@ background-image: url("https://www.transparenttextures.com/patterns/cubes.png"),
 .pop-up__subtitle a {
   color: #f9fafb;
 }
+.popupload {
+    position: fixed; /* Keep it fixed for centering */
+    padding: 30px 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto; /* Allows scrolling if content is too large */
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s;
+    z-index: 10;
+    justify-content: center;
+    background-color: #181923;
+    width: auto; /* Width adjusts based on content */
+    max-width: 90%; /* Limit maximum width */
+    max-height: 90vh; /* Maximum height relative to viewport height */
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    white-space: normal;
+}
+
+.popupload.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.popupload.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.pop-upload__title {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(113, 119, 144, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pop-upload__subtitle {
+    white-space: normal;
+    margin: 20px 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8em;
+}
+
+.pop-upload__subtitle a {
+    color: #f9fafb;
+}
 
 .content-button-wrapper .content-button.status-button.open.close {
   width: auto;
@@ -849,3 +918,141 @@ background-image: url("https://www.transparenttextures.com/patterns/cubes.png"),
     ::-webkit-file-upload-button { -webkit-appearance: button; font: inherit; }
     summary { display: list-item; }
     [hidden], template { display: none; }
+
+    .kontai {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .input-group, .textarea-group, .date-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .input-group input, .textarea-group textarea, .date-group input {
+            flex: 1;
+            padding: 10px;
+  
+            border: 1px solid #3a3a4a;
+            color: #ffffff;
+            border-radius: 5px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            width: calc(100% - 0px);
+        }
+        .input-group input:focus, .textarea-group textarea:focus, .date-group input:focus {
+            outline: none;
+            border-color: #ffffff;
+        }
+        .input-group input::placeholder, .textarea-group textarea::placeholder, .date-group input::placeholder {
+            color: #ffffff;
+        }
+        .input-group label, .textarea-group label, .date-group label {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            color: #ffffff;
+            transition: all 0.2s ease;
+            pointer-events: none;
+        }
+        .input-group input:focus + label,
+        .input-group input:not(:placeholder-shown) + label,
+        .textarea-group textarea:focus + label,
+        .textarea-group textarea:not(:placeholder-shown) + label,
+        .date-group input:focus + label,
+        .date-group input:not(:placeholder-shown) + label {
+            top: -20px;
+            left: 10px;
+            font-size: 12px;
+            color: #ffffff;
+        }
+        .image-preview {
+            border: 2px dashed #3a3a4a;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .hover-text {
+    position: absolute; /* Posisi absolut agar bisa ditempatkan di atas gambar */
+    top: 50%; /* Pusatkan secara vertikal */
+    left: 50%; /* Pusatkan secara horizontal */
+    transform: translate(-50%, -50%); /* Pusatkan teks */
+    color: white; /* Warna teks */
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
+    padding: 10px; /* Ruang di sekitar teks */
+    border-radius: 5px; /* Sudut melengkung */
+    visibility: hidden; /* Sembunyikan teks secara default */
+    opacity: 0; /* Sembunyikan dengan efek transisi */
+    transition: visibility 0s, opacity 0.5s linear; /* Transisi untuk efek */
+}
+
+.image-preview:hover .hover-text {
+    visibility: visible; /* Tampilkan teks saat hover */
+    opacity: 1; /* Tampilkan dengan efek transisi */
+}
+        .image-preview img {
+            max-width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .image-preview label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .progress-container {
+            position: relative;
+            margin-top: 30px;
+        }
+        .file-name {
+            position: absolute;
+            top: -20px;
+            left: 0;
+            font-size: 14px;
+        }
+        .progress-percentage {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            font-size: 14px;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #3a3a4a;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress-bar div {
+            height: 10px;
+            background-color: #007bff;
+            width: 0;
+            transition: width 0.1s linear;
+        }
+        .submit-button {
+            background-color: #7c2dfc;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }
+        input[type="date"]:focus::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }
+        @media (max-width: 600px) {
+            .input-group input, .textarea-group textarea, .date-group input {
+                flex: 1 1 100%;
+                margin-right: 0;
+                width: calc(100% - 0px);
+            }
+        }
