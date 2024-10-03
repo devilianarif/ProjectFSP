@@ -6,6 +6,20 @@ body {
   margin: 0px;
   overflow: hidden;
 }
+.fallback-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000; /* Set your desired background color */
+    display: none; /* Initially hidden */
+    z-index: 1; /* Ensures it's above the video */
+}
+
+video:invalid + .fallback-bg {
+    display: block; /* Show fallback if the video is invalid */
+}
 
 div {
   position: absolute;
