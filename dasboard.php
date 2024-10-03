@@ -93,6 +93,26 @@
         </div>
        </div>
       </li>
+       <li class="lg-product">
+       <div class="products">
+     <img src="aset/image/dota-2.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
+          Dota 2
+       </div>
+       <span class="status">
+        <span class="status-circle green"></span>
+        Events</span>
+       <div class="button-wrapper">
+        <button class="content-button status-button open">Done</button>
+        <div class="menu">
+         <button class="dropdown">
+          <ul>
+           <li><a href="game-editevent.php">update</a></li>
+         <li class="status-button"><a href="#">delete</a></li>
+          </ul>
+         </button>
+        </div>
+       </div>
+      </li>
       <li class="lg-product">
        <div class="products">
      <img src="aset/image/far-cry-5.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
@@ -109,7 +129,7 @@
          <button class="dropdown">
           <ul>
 
-           <li><a href="#">update</a></li>
+           <li><a href="#">Review</a></li>
            <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
@@ -130,7 +150,7 @@
          <button class="dropdown">
           <ul>
 
-           <li><a href="#">update</a></li>
+           <li><a href="#">Review</a></li>
          <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
@@ -169,7 +189,7 @@
          <button class="dropdown">
           <ul>
 
-           <li><a href="#">update</a></li>
+           <li><a href="#">Review</a></li>
          <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
@@ -190,7 +210,7 @@
          <button class="dropdown">
           <ul>
 
-           <li><a href="#">update</a></li>
+           <li><a href="#">Review</a></li>
          <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
@@ -216,7 +236,7 @@
              <button class="dropdown">
           <ul>
 
-           <li><a href="#">update</a></li>
+           <li><a href="game-editgame.php">update</a></li>
            <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
@@ -238,7 +258,7 @@
                    <button class="dropdown">
           <ul>
 
-           <li><a href="#">update</a></li>
+           <li><a href="game-editgame.php">update</a></li>
            <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
@@ -260,7 +280,7 @@
                    <button class="dropdown">
           <ul>
 
-           <li><a href="#">update</a></li>
+           <li><a href="game-editgame.php">update</a></li>
            <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
