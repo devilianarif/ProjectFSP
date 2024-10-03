@@ -149,6 +149,24 @@
         History</span>
        <div class="button-wrapper">
         <button class="content-button status-button open">Done</button>
+
+          <div class="pop-up">
+         <div class="pop-up__title">Update This 
+          <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+           <circle cx="12" cy="12" r="10" />
+           <path d="M15 9l-6 6M9 9l6 6" />
+          </svg>
+         </div>
+         <div class="pop-up__subtitle">yakin anda ingin hapus ini ?</div>
+         <div class="checkbox-wrapper">
+          <input type="checkbox" id="check1" class="checkbox">
+          <label for="check1">ya, saya yakin!</label>
+         </div>
+         <div class="content-button-wrapper">
+          <button class="content-button status-button open close">Batal</button>
+          <button class="content-button status-button">Lanjutkan!</button>
+         </div>
+        </div>
         <div class="menu">
          <button class="dropdown">
           <ul>
