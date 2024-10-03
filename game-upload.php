@@ -273,7 +273,7 @@
         <div class="menu">
          <button class="dropdown">
           <ul>
-           <li><a href="game-editevent.php">update</a></li>
+          
          <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
@@ -297,7 +297,7 @@
          <button class="dropdown">
           <ul>
 
-           <li><a href="#">update</a></li>
+        
            <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
@@ -319,7 +319,7 @@
          <button class="dropdown">
           <ul>
 
-           <li><a href="#">update</a></li>
+          <li><a href="game-editevent.php">update</a></li>
          <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
@@ -341,7 +341,7 @@
          <button class="dropdown">
           <ul>
 
-           <li><a href="#">update</a></li>
+        <li><a href="game-editevent.php">update</a></li>
          <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
@@ -386,7 +386,7 @@
         <div class="menu">
          <button class="dropdown">
           <ul>
-           <li><a href="game-editevent.php">update</a></li>
+        
          <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
@@ -410,7 +410,6 @@
          <button class="dropdown">
           <ul>
 
-           <li><a href="#">update</a></li>
            <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
@@ -432,7 +431,7 @@
          <button class="dropdown">
           <ul>
 
-           <li><a href="#">update</a></li>
+          <li><a href="game-editgame.php">update</a></li>
          <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
@@ -454,7 +453,7 @@
          <button class="dropdown">
           <ul>
 
-           <li><a href="#">update</a></li>
+         <li><a href="game-editgame.php">update</a></li>
          <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
