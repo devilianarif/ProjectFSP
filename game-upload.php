@@ -142,7 +142,9 @@
                             <div id="uploadedFile" class="uploaded-file">
                                 <div class="uploaded-file__icon-container">
                                     <i class='bx bxs-file-blank uploaded-file__icon'></i>
-                                    <span class="uploaded-file__icon-text"></span> <!-- Data handled by JS -->
+                                 <span class="uploaded-file__icon-text" style="color: transparent;">
+    <!-- Data handled by JS -->
+</span>
                                 </div>
                                 <div id="uploadedFileInfo" class="uploaded-file__info">
                                     <span class="uploaded-file__name">Project 1</span>
@@ -206,17 +208,9 @@
                     </div>
                 </div>
 
-                <!-- Step 2 Form: Event Date -->
-                <div class="slider-section">
-                    <h2 class="text-h2">Event Date</h2>
-                    <input class="Sinput" type="date">
-                 <div class="button-grouping">
-                        <button class="buton back-btn">Back</button>
-                        <button class="buton next-btn">Next</button>
-                    </div>
-                </div>
+              
 
-                <!-- Step 3 Form: Event Description -->
+                <!-- Step 2 Form: Event Description -->
                 <div class="slider-section">
                     <h2 class="text-h2">Event Description</h2>
                     <textarea class="Sinput" placeholder="Enter event description"></textarea>
@@ -225,17 +219,28 @@
                         <button class="buton submit-btn">Submit</button>
                     </div>
                 </div>
+
+
+                  <!-- Step 3 Form: Event Date -->
+                <div class="slider-section">
+                    <h2 class="text-h2">Event Date</h2>
+                    <input class="Sinput" type="date">
+                 <div class="button-grouping">
+                        <button class="buton back-btn">Back</button>
+                        <button class="buton next-btn">Next</button>
+                    </div>
+                </div>
             </div> <!-- End Slider -->
         </div> <!-- End Slider coninput -->
     </div> <!-- End coninput -->
 </div>
 
-
-
     
     </div>
+
+
     <div class="content-section">
-     <div class="content-section-title">News</div>
+     <div class="content-section-title">History Events</div>
      <ul>
       <li class="lg-product">
        <div class="products">
@@ -244,58 +249,32 @@
        </div>
        <span class="status">
         <span class="status-circle green"></span>
-        updated</span>
+        Completed</span>
        <div class="button-wrapper">
-        <button class="content-button status-button open">Open</button>
-        <div class="menu">
-         <button class="dropdown">
-          <ul>
-           <li><a href="#">detail</a></li>
-           <li><a href="#">update</a></li>
-           <li><a href="#">delete</a></li>
-          </ul>
-         </button>
-        </div>
-       </div>
-      </li>
-      <li class="lg-product">
-       <div class="products">
-     <img src="aset/image/fortnite.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
-        Fortnite
-       </div>
+        <button class="content-button status-button open">Added</button>
 
-       <span class="status">
-        <span class="status-circle"></span>
-        Update Available</span>
-       <div class="button-wrapper">
-        <button class="content-button status-button">update now</button>
-        <div class="pop-up">
+          <div class="pop-up">
          <div class="pop-up__title">Update This 
           <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
            <circle cx="12" cy="12" r="10" />
            <path d="M15 9l-6 6M9 9l6 6" />
           </svg>
          </div>
-         <div class="pop-up__subtitle">klik ya untuk lanjut, gk ada harapan kembali  <a href="#">Learn more</a></div>
+         <div class="pop-up__subtitle">yakin anda ingin hapus ini ?</div>
          <div class="checkbox-wrapper">
           <input type="checkbox" id="check1" class="checkbox">
-          <label for="check1">delete all data</label>
-         </div>
-         <div class="checkbox-wrapper">
-          <input type="checkbox" id="check2" class="checkbox">
-          <label for="check2">Remove all project</label>
+          <label for="check1">ya, saya yakin!</label>
          </div>
          <div class="content-button-wrapper">
-          <button class="content-button status-button open close">Cancel</button>
-          <button class="content-button status-button">Continue</button>
+          <button class="content-button status-button open close">Batal</button>
+          <button class="content-button status-button">Lanjutkan!</button>
          </div>
         </div>
         <div class="menu">
          <button class="dropdown">
           <ul>
-   <li><a href="#">detail</a></li>
-           <li><a href="#">update</a></li>
-           <li><a href="#">delete</a></li>
+           <li><a href="game-editevent.php">update</a></li>
+         <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
         </div>
@@ -303,72 +282,189 @@
       </li>
       <li class="lg-product">
        <div class="products">
-      <img src="aset/image/pubg.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
-        PUBG
+     <img src="aset/image/far-cry-5.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
+        Far Cry 5
        </div>
+
        <span class="status">
         <span class="status-circle green"></span>
-        Updated</span>
+        Completed</span>
        <div class="button-wrapper">
-        <button class="content-button status-button open">Open</button>
+        <button class="content-button status-button open">Added</button>
+
+
         <div class="menu">
          <button class="dropdown">
           <ul>
-   <li><a href="#">detail</a></li>
+
            <li><a href="#">update</a></li>
-           <li><a href="#">delete</a></li>
+           <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
         </div>
        </div>
       </li>
-     </ul>
-    </div>
-    <div class="content-section">
-     <div class="content-section-title">prjek</div>
-     <div class="apps-card">
-      <div class="app-card">
-       <span>
-      <img src="aset/image/far-cry-5.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
-     
-       </span>
-       <div class="app-card__subtext">
-        <h3>far cry 5</h3>
-        Far Cry 5 is a game where you fight a cult in Montana. You can explore freely, do missions, and play with a friend. </div>
-       <div class="app-card-buttons">
-        <button class="content-button status-button">Update</button>
-        <div class="menu"></div>
+      <li class="lg-product">
+       <div class="products">
+      <img src="aset/image/rdr-2.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
+        RDR 2
        </div>
-      </div>
-      <div class="app-card">
-       <span>
-       <img src="aset/image/pubg.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
+       <span class="status">
+        <span class="status-circle"></span>
+        Ongoing</span>
+       <div class="button-wrapper">
+      <button class="content-button status-button open">Added</button>
+
+        <div class="menu">
+         <button class="dropdown">
+          <ul>
+
+           <li><a href="#">update</a></li>
+         <li class="status-button"><a href="#">delete</a></li>
+          </ul>
+         </button>
+        </div>
+       </div>
+      </li>
+        <li class="lg-product">
+       <div class="products">
+      <img src="aset/image/rdr-2.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
+        RDR 2
+       </div>
+       <span class="status">
+        <span class="status-circle"></span>
+        Ongoing</span>
+       <div class="button-wrapper">
+      <button class="content-button status-button open">Added</button>
+
+        <div class="menu">
+         <button class="dropdown">
+          <ul>
+
+           <li><a href="#">update</a></li>
+         <li class="status-button"><a href="#">delete</a></li>
+          </ul>
+         </button>
+        </div>
+       </div>
+      </li>
        
-       </span>
-       <div class="app-card__subtext">
- <h3>PUBG</h3>
-        PUBG is a game where you try to be the last person alive on an island by finding weapons and fighting others. </div>
-       <div class="app-card-buttons">
-        <button class="content-button status-button">Update</button>
-        <div class="menu"></div>
-       </div>
-      </div>
-      <div class="app-card">
-       <span>
-     <img src="aset/image/dota-2.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
-   
-       </span>
-       <div class="app-card__subtext">
-        <h3>Dota 2</h3>
-          Dota 2 is a strategy game where two teams of five players each compete to destroy the other team’s base. Each player controls a hero with unique abilities.. 
-       </div>
-       <div class="app-card-buttons">
-        <button class="content-button status-button">Update</button>
-        <div class="menu"></div>
-       </div>
-      </div>
-     </div>
     </div>
+
+
+  <div class="content-section">
+     <div class="content-section-title">History Games</div>
+     <ul>
+    <li class="lg-product">
+       <div class="products">
+     <img src="aset/image/dota-2.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
+          Dota 2
+       </div>
+       <span class="status">
+        <span class="status-circle green"></span>
+        Completed</span>
+       <div class="button-wrapper">
+        <button class="content-button status-button open">Added</button>
+
+          <div class="pop-up">
+         <div class="pop-up__title">Update This 
+          <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+           <circle cx="12" cy="12" r="10" />
+           <path d="M15 9l-6 6M9 9l6 6" />
+          </svg>
+         </div>
+         <div class="pop-up__subtitle">yakin anda ingin hapus ini ?</div>
+         <div class="checkbox-wrapper">
+          <input type="checkbox" id="check1" class="checkbox">
+          <label for="check1">ya, saya yakin!</label>
+         </div>
+         <div class="content-button-wrapper">
+          <button class="content-button status-button open close">Batal</button>
+          <button class="content-button status-button">Lanjutkan!</button>
+         </div>
+        </div>
+        <div class="menu">
+         <button class="dropdown">
+          <ul>
+           <li><a href="game-editevent.php">update</a></li>
+         <li class="status-button"><a href="#">delete</a></li>
+          </ul>
+         </button>
+        </div>
+       </div>
+      </li>
+      <li class="lg-product">
+       <div class="products">
+     <img src="aset/image/far-cry-5.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
+        Far Cry 5
+       </div>
+
+       <span class="status">
+        <span class="status-circle green"></span>
+        Completed</span>
+       <div class="button-wrapper">
+        <button class="content-button status-button open">Added</button>
+
+
+        <div class="menu">
+         <button class="dropdown">
+          <ul>
+
+           <li><a href="#">update</a></li>
+           <li class="status-button"><a href="#">delete</a></li>
+          </ul>
+         </button>
+        </div>
+       </div>
+      </li>
+      <li class="lg-product">
+       <div class="products">
+      <img src="aset/image/rdr-2.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
+        RDR 2
+       </div>
+       <span class="status">
+        <span class="status-circle"></span>
+        Ongoing</span>
+       <div class="button-wrapper">
+      <button class="content-button status-button open">Added</button>
+
+        <div class="menu">
+         <button class="dropdown">
+          <ul>
+
+           <li><a href="#">update</a></li>
+         <li class="status-button"><a href="#">delete</a></li>
+          </ul>
+         </button>
+        </div>
+       </div>
+      </li>
+        <li class="lg-product">
+       <div class="products">
+      <img src="aset/image/rdr-2.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
+        RDR 2
+       </div>
+       <span class="status">
+        <span class="status-circle"></span>
+        Ongoing</span>
+       <div class="button-wrapper">
+      <button class="content-button status-button open">Added</button>
+
+        <div class="menu">
+         <button class="dropdown">
+          <ul>
+
+           <li><a href="#">update</a></li>
+         <li class="status-button"><a href="#">delete</a></li>
+          </ul>
+         </button>
+        </div>
+       </div>
+      </li>
+       
+    </div>
+
+
    </div>
   </div>
  </div>
