@@ -80,7 +80,7 @@
        </div>
        <span class="status">
         <span class="status-circle green"></span>
-        updated</span>
+        Events</span>
        <div class="button-wrapper">
         <button class="content-button status-button open">Open</button>
         <div class="menu">
@@ -102,7 +102,7 @@
 
        <span class="status">
         <span class="status-circle"></span>
-        Update Available</span>
+        Proposal</span>
        <div class="button-wrapper">
         <button class="content-button status-button">update now</button>
         <div class="pop-up">
@@ -144,7 +144,71 @@
        </div>
        <span class="status">
         <span class="status-circle green"></span>
-        Updated</span>
+        Proposal</span>
+       <div class="button-wrapper">
+        <button class="content-button status-button open">Open</button>
+        <div class="menu">
+         <button class="dropdown">
+          <ul>
+   <li><a href="#">detail</a></li>
+           <li><a href="#">update</a></li>
+           <li><a href="#">delete</a></li>
+          </ul>
+         </button>
+        </div>
+       </div>
+      </li>
+       <li class="lg-product">
+       <div class="products">
+     <img src="aset/image/far-cry-5.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
+        Far Cry 5
+       </div>
+
+       <span class="status">
+        <span class="status-circle"></span>
+        Teams</span>
+       <div class="button-wrapper">
+        <button class="content-button status-button">update now</button>
+        <div class="pop-up">
+         <div class="pop-up__title">Update This 
+          <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+           <circle cx="12" cy="12" r="10" />
+           <path d="M15 9l-6 6M9 9l6 6" />
+          </svg>
+         </div>
+         <div class="pop-up__subtitle">klik ya untuk lanjut, gk ada harapan kembali  <a href="#">Learn more</a></div>
+         <div class="checkbox-wrapper">
+          <input type="checkbox" id="check1" class="checkbox">
+          <label for="check1">delete all data</label>
+         </div>
+         <div class="checkbox-wrapper">
+          <input type="checkbox" id="check2" class="checkbox">
+          <label for="check2">Remove all project</label>
+         </div>
+         <div class="content-button-wrapper">
+          <button class="content-button status-button open close">Cancel</button>
+          <button class="content-button status-button">Continue</button>
+         </div>
+        </div>
+        <div class="menu">
+         <button class="dropdown">
+          <ul>
+   <li><a href="#">detail</a></li>
+           <li><a href="#">update</a></li>
+           <li><a href="#">delete</a></li>
+          </ul>
+         </button>
+        </div>
+       </div>
+      </li>
+      <li class="lg-product">
+       <div class="products">
+      <img src="aset/image/rdr-2.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
+        RDR 2
+       </div>
+       <span class="status">
+        <span class="status-circle green"></span>
+        Teams</span>
        <div class="button-wrapper">
         <button class="content-button status-button open">Open</button>
         <div class="menu">
@@ -161,7 +225,7 @@
      </ul>
     </div>
     <div class="content-section">
-     <div class="content-section-title">Terbaru</div>
+     <div class="content-section-title">Games</div>
      <div class="apps-card">
       <div class="app-card">
        <span>
