@@ -82,13 +82,12 @@
         <span class="status-circle green"></span>
         Events</span>
        <div class="button-wrapper">
-        <button class="content-button status-button open">Open</button>
+        <button class="content-button status-button open">Done</button>
         <div class="menu">
          <button class="dropdown">
           <ul>
-           <li><a href="#">detail</a></li>
-           <li><a href="#">update</a></li>
-           <li><a href="#">delete</a></li>
+           <li><a href="game-editevent.php">update</a></li>
+         <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
         </div>
@@ -104,34 +103,14 @@
         <span class="status-circle"></span>
         Proposal</span>
        <div class="button-wrapper">
-        <button class="content-button status-button">update now</button>
-        <div class="pop-up">
-         <div class="pop-up__title">Update This 
-          <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
-           <circle cx="12" cy="12" r="10" />
-           <path d="M15 9l-6 6M9 9l6 6" />
-          </svg>
-         </div>
-         <div class="pop-up__subtitle">klik ya untuk lanjut, gk ada harapan kembali  <a href="#">Learn more</a></div>
-         <div class="checkbox-wrapper">
-          <input type="checkbox" id="check1" class="checkbox">
-          <label for="check1">delete all data</label>
-         </div>
-         <div class="checkbox-wrapper">
-          <input type="checkbox" id="check2" class="checkbox">
-          <label for="check2">Remove all project</label>
-         </div>
-         <div class="content-button-wrapper">
-          <button class="content-button status-button open close">Cancel</button>
-          <button class="content-button status-button">Continue</button>
-         </div>
-        </div>
+        <button class="content-button ">Progress</button>
+
         <div class="menu">
          <button class="dropdown">
           <ul>
-   <li><a href="#">detail</a></li>
+
            <li><a href="#">update</a></li>
-           <li><a href="#">delete</a></li>
+           <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
         </div>
@@ -146,13 +125,13 @@
         <span class="status-circle green"></span>
         Proposal</span>
        <div class="button-wrapper">
-        <button class="content-button status-button open">Open</button>
+        <button class="content-button status-button open">Done</button>
         <div class="menu">
          <button class="dropdown">
           <ul>
-   <li><a href="#">detail</a></li>
+
            <li><a href="#">update</a></li>
-           <li><a href="#">delete</a></li>
+         <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
         </div>
@@ -168,7 +147,7 @@
         <span class="status-circle"></span>
         Teams</span>
        <div class="button-wrapper">
-        <button class="content-button status-button">update now</button>
+        <button class="content-button ">Progress</button>
         <div class="pop-up">
          <div class="pop-up__title">Update This 
           <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
@@ -176,26 +155,22 @@
            <path d="M15 9l-6 6M9 9l6 6" />
           </svg>
          </div>
-         <div class="pop-up__subtitle">klik ya untuk lanjut, gk ada harapan kembali  <a href="#">Learn more</a></div>
+         <div class="pop-up__subtitle">yakin anda ingin hapus ini ?</div>
          <div class="checkbox-wrapper">
           <input type="checkbox" id="check1" class="checkbox">
-          <label for="check1">delete all data</label>
-         </div>
-         <div class="checkbox-wrapper">
-          <input type="checkbox" id="check2" class="checkbox">
-          <label for="check2">Remove all project</label>
+          <label for="check1">ya, saya yakin!</label>
          </div>
          <div class="content-button-wrapper">
-          <button class="content-button status-button open close">Cancel</button>
-          <button class="content-button status-button">Continue</button>
+          <button class="content-button status-button open close">Batal</button>
+          <button class="content-button status-button">Lanjutkan!</button>
          </div>
         </div>
         <div class="menu">
          <button class="dropdown">
           <ul>
-   <li><a href="#">detail</a></li>
+
            <li><a href="#">update</a></li>
-           <li><a href="#">delete</a></li>
+         <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
         </div>
@@ -210,13 +185,13 @@
         <span class="status-circle green"></span>
         Teams</span>
        <div class="button-wrapper">
-        <button class="content-button status-button open">Open</button>
+        <button class="content-button status-button open">Done</button>
         <div class="menu">
          <button class="dropdown">
           <ul>
-   <li><a href="#">detail</a></li>
+
            <li><a href="#">update</a></li>
-           <li><a href="#">delete</a></li>
+         <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
         </div>
@@ -236,8 +211,17 @@
         <h3>Fortnite</h3>
         Fortnite is a battle royale game where players battle to be the last one standing on an island, with a focus on building structures and an ever-changing environment. </div>
        <div class="app-card-buttons">
-        <button class="content-button status-button">Update</button>
-        <div class="menu"></div>
+        <button class="content-button status-button">Progress</button>
+        <div class="menu">
+             <button class="dropdown">
+          <ul>
+
+           <li><a href="#">update</a></li>
+           <li class="status-button"><a href="#">delete</a></li>
+          </ul>
+         </button>
+
+        </div>
        </div>
       </div>
       <div class="app-card">
@@ -249,8 +233,16 @@
  <h3>PUBG</h3>
         PUBG (PlayerUnknown's Battlegrounds) is a battle royale game where players parachute onto an island, gather weapons, and fight to be the last one standing. </div>
        <div class="app-card-buttons">
-        <button class="content-button status-button">Update</button>
-        <div class="menu"></div>
+        <button class="content-button status-button">Progress</button>
+        <div class="menu">
+                   <button class="dropdown">
+          <ul>
+
+           <li><a href="#">update</a></li>
+           <li class="status-button"><a href="#">delete</a></li>
+          </ul>
+         </button>
+        </div>
        </div>
       </div>
       <div class="app-card">
@@ -263,8 +255,16 @@
           Dota 2 is a MOBA where two teams of five compete to destroy the enemy's Ancient using unique heroes and strategy.you can play together with your friend
        </div>
        <div class="app-card-buttons">
-        <button class="content-button status-button">Update</button>
-        <div class="menu"></div>
+        <button class="content-button status-button">Progress</button>
+        <div class="menu">
+                   <button class="dropdown">
+          <ul>
+
+           <li><a href="#">update</a></li>
+           <li class="status-button"><a href="#">delete</a></li>
+          </ul>
+         </button>
+        </div>
        </div>
       </div>
      </div>
