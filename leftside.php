@@ -17,7 +17,7 @@
       Events
       <span class="notification-number updates">3</span>
      </a>
-       <a href="Events.php">
+       <a href="game-event.php">
     <svg viewBox="0 0 64 64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M32 0c-1.1 0-2 .9-2 2v12h-12c-1.1 0-2 .9-2 2v12h-12c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12v12c0 1.1.9 2 2 2h12v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-12h12c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2h-12v-12c0-1.1-.9-2-2-2h-12v-12c0-1.1-.9-2-2-2h-12v-12c0-1.1-.9-2-2-2h-12v-12zM28 14h8v8h8v8h8v8h-8v8h-8v8h-8v-8h-8v-8h-8v-8h8v-8h8v-8z" />
   </svg>
