@@ -63,12 +63,12 @@
     </text>
 </svg>
 
-       Banner
+       Hello, nama user
       </h3>
-      <div class="content-text">holla, are you ready for chiken dinner ? </div>
+      <div class="content-text">Wellcome To Admin Mode </div>
       <button class="content-button">Home</button>
      </div>
-     <img class="content-wrapper-img" src="" alt="harus png">
+     <img class="content-wrapper-img" src="aset/image/bnr.png" alt="">
     </div>
   <div class="content-section">
      <div class="content-section-title">News</div>
