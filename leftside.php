@@ -10,14 +10,14 @@
 </svg>
     Games
      </a>
-     <a href="game-upload.php">
+     <a href="game-event.php">
      <svg viewBox="0 0 448 512" fill="currentColor">
   <path d="M436 0h-16v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V32H76v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V32H12C5.4 32 0 37.4 0 44v424c0 6.6 5.4 12 12 12h412c6.6 0 12-5.4 12-12V44c0-6.6-5.4-12-12-12zM64 80h32v32H64V80zm96 0h32v32h-32V80zm96 0h32v32h-32V80zm96 0h32v32h-32V80zm96 0h32v32h-32V80zM32 432v-320h384v320H32z"/>
 </svg>
       Events
       <span class="notification-number updates">3</span>
      </a>
-       <a href="game-event.php">
+       <a href="game-upload.php">
     <svg viewBox="0 0 64 64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M32 0c-1.1 0-2 .9-2 2v12h-12c-1.1 0-2 .9-2 2v12h-12c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12v12c0 1.1.9 2 2 2h12v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-12h12c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2h-12v-12c0-1.1-.9-2-2-2h-12v-12c0-1.1-.9-2-2-2h-12v-12c0-1.1-.9-2-2-2h-12v-12zM28 14h8v8h8v8h8v8h-8v8h-8v8h-8v-8h-8v-8h-8v-8h8v-8h8v-8z" />
   </svg>
