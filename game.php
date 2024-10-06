@@ -47,6 +47,7 @@
     <div class="header-menu">
      <a class="main-header-link is-active" href="#">Home</a>
      <a class="main-header-link" href="game-upload.php">Upload</a>
+       <a class="main-header-link" href="game-event.php">Event</a>
     </div>
 
    </div>
