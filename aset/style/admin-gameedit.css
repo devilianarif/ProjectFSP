@@ -606,7 +606,7 @@ display: flex;
 .dropdown ul {
   position: absolute;
   background: #21242d;
-  height: 110px;
+  height: auto;
   width: 120px;
   right: 0;
   top: 20px;
@@ -929,24 +929,27 @@ display: flex;
             margin-bottom: 20px;
             flex-wrap: wrap;
             position: relative;
+
         }
-        .input-group input, .textarea-group textarea, .date-group input {
-            flex: 1;
-            padding: 10px;
-  
-            border: 1px solid #3a3a4a;
-            color: #ffffff;
-            border-radius: 5px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            width: calc(100% - 0px);
-        }
+      .input-group input, .textarea-group textarea, .date-group input {
+    flex: 1;
+    padding: 10px;
+    background-color: #16537e; /* Background color sudah diatur */
+    border: 1px solid #3a3a4a;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: calc(100% - 0px);
+}
+
         .input-group input:focus, .textarea-group textarea:focus, .date-group input:focus {
             outline: none;
             border-color: #ffffff;
         }
         .input-group input::placeholder, .textarea-group textarea::placeholder, .date-group input::placeholder {
             color: #ffffff;
+
         }
         .input-group label, .textarea-group label, .date-group label {
             position: absolute;
@@ -1056,3 +1059,8 @@ display: flex;
                 width: calc(100% - 0px);
             }
         }
+.full-width-input {
+    width: 100%;
+    margin-right: 0;
+}
+

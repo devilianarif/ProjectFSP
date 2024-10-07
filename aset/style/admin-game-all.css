@@ -587,7 +587,7 @@ background-color: rgb(146 151 179 / 13%);
 .dropdown ul {
   position: absolute;
   background: #21242d;
-  height: 110px;
+  height: auto;
   width: 120px;
   right: 0;
   top: 20px;

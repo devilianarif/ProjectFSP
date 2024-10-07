@@ -605,7 +605,7 @@ display: flex;
 .dropdown ul {
   position: absolute;
   background: #21242d;
-  height: 110px;
+  height: auto;
   width: 120px;
   right: 0;
   top: 20px;
@@ -1520,5 +1520,4 @@ background-color: rgb(195 124 124 / 0%);
   border-color: rgb(224 63 255);
   opacity: 0.9;
 }
-
 
