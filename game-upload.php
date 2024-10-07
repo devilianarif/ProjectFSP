@@ -217,7 +217,8 @@
                     <textarea class="Sinput" placeholder="Enter event description"></textarea>
                     <div class="button-grouping">
                         <button class="buton back-btn">Back</button>
-                        <button class="buton submit-btn">Submit</button>
+                             <button class="buton next-btn">Next</button>
+                
                     </div>
                 </div>
 
@@ -228,7 +229,7 @@
                     <input class="Sinput" type="date">
                  <div class="button-grouping">
                         <button class="buton back-btn">Back</button>
-                        <button class="buton next-btn">Next</button>
+                           <button class="buton submit-btn">Submit</button>
                     </div>
                 </div>
             </div> <!-- End Slider -->
