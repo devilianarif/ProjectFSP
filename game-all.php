@@ -24,7 +24,6 @@
   <div class="header-menu">
    <a class="menu-link " href="dasboard.html">Dasboard</a>
    <a class="menu-link notify" href="member.html">Member</a>
-   <a class="menu-link" href="event.html">Tournament</a>
    <a class="menu-link is-active" href="game.html">Games</a>
   </div>
   <div class="search-bar">

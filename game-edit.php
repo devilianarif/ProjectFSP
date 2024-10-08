@@ -20,7 +20,6 @@
   <div class="header-menu">
    <a class="menu-link " href="dasboard.php">Dasboard</a>
    <a class="menu-link notify" href="member.php">Member</a>
-   <a class="menu-link" href="event.php">Tournament</a>
    <a class="menu-link is-active" href="game.php">Games</a>
   </div>
   <div class="search-bar">

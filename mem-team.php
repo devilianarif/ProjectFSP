@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin-Game BLinc</title>
-<link rel="stylesheet" href="aset/style/mem-team.css">
+<link rel="stylesheet" href="aset/style/member-team.css">
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -19,21 +19,14 @@
   <div class="menu-circle"></div>
   <div class="header-menu">
    <a class="menu-link " href="dasboard.php">Dasboard</a>
-   <a class="menu-link notify" href="#">Member</a>
-   <a class="menu-link" href="event.php">Tournament</a>
-   <a class="menu-link is-active" href="game.php">Games</a>
+   <a class="menu-link  is-active" href="#">Member</a>
+   <a class="menu-link" href="game.php">Games</a>
   </div>
   <div class="search-bar">
    <input type="text" placeholder="Search">
   </div>
   <div class="header-profile">
-   <div class="notification">
-    <span class="notification-number">3</span>
-       <a href="#">
-    <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
-     <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" />
-    </svg></a>
-   </div>
+  <h3 style="color: white;">DevilianArif </h3>
    <img class="profile-img" src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="">
   </div>
  </div>
@@ -52,10 +45,35 @@
 
    </div>
   
-   <div class="content-wrapper">
-    <div class="content-wrapper-header">
- 
-  <button id="openPopupload" class="open-upload">Create Team</button>
+    
+ <div class="content-wrapper">
+     <div class="tainer">
+    <div class="bner">
+        <img alt="Banner image" height="500" src="aset/image/mike.jpg" width="1200"/>
+    </div>
+  <div class="platons">
+    <div id="openPopupload" class="platon">
+    <svg
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M7 7V11H11V7H7Z" fill="currentColor" />
+  <path d="M13 7H17V11H13V7Z" fill="currentColor" />
+  <path d="M13 13V17H17V13H13Z" fill="currentColor" />
+  <path d="M7 13H11V17H7V13Z" fill="currentColor" />
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M3 3H21V21H3V3ZM5 5V19H19V5H5Z"
+    fill="currentColor"
+  />
+</svg>
+        <h3>Create Team</h3>
+        
+    </div>
 
  <div id="overlay" class="overlay-app"></div>
  <div class="popupload" id="popupload">
@@ -109,7 +127,7 @@
                     </div>
                     <div class="button-grouping">
                         <button class="buton back-btn">Back</button>
-                        <button class="buton next-btn">Next</button>
+                              <button class="buton submit-btn">Submit</button>
                     </div>
                 </div>
 
@@ -118,7 +136,37 @@
         </div> <!-- End Slider coninput -->
     </div> <!-- End coninput -->
 </div>
-<button id="openPopuploadEvent" class="open-upload">Create Event Team</button>
+   <div  id="openPopuploadEvent" class="platon">
+ <svg
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M20 5H4V19H20V5ZM4 3C2.89543 3 2 3.89543 2 5V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V5C22 3.89543 21.1046 3 20 3H4Z"
+    fill="currentColor"
+  />
+  <path
+    d="M9.06723 9.19629H12.0672L9.93267 14.8038H6.93267L9.06723 9.19629Z"
+    fill="currentColor"
+  />
+  <path
+    d="M14.0672 9.19629H17.0672L14.9327 14.8038H11.9327L14.0672 9.19629Z"
+    fill="currentColor"
+  />
+</svg>
+                   <h3>Create Event Team</h3>
+          
+        </div>
+       
+    </div>
+
+        
+  
 
 <div id="overlayEvent" class="overlay-app"></div>
 <div class="popupload" id="popuploadEvent">
@@ -139,10 +187,6 @@
             <div class="step">
                 <div class="circle">2</div>
                 <span>Step 2</span>
-            </div>
-            <div class="step">
-                <div class="circle">3</div>
-                <span>Step 3</span>
             </div>
         </div>
 
@@ -171,24 +215,6 @@
 
               
 
-                <!-- Step 2 Form: team -->
-                <div class="slider-section">
-                    <h2 class="text-h2">Select Team 2</h2>
-                  <div class="select">
-                        <select>
-                            <option value="1">Game1</option>
-                            <option value="2">Game2</option>
-                            <option value="3">Game3</option>
-                        </select>
-                    </div>
-                    <div class="button-grouping">
-                        <button class="buton back-btn">Back</button>
-                             <button class="buton next-btn">Next</button>
-                
-                    </div>
-                </div>
-
-
                   <!-- Step 3 Form: Event  -->
                 <div class="slider-section">
                     <h2 class="text-h2">Select Event</h2>
@@ -208,9 +234,7 @@
         </div> <!-- End Slider coninput -->
     </div> <!-- End coninput -->
 </div>
-
-    
-    </div>
+</div>
 
   <div class="content-section">
      <div class="content-section-title">History Team</div>
@@ -442,6 +466,6 @@
 </div>
 <!-- partial -->
  <script src='aset/script/jquery351.js'></script>
- <script  src="aset/script/memteam.js"></script>
+ <script  src="aset/script/memberteam.js"></script>
 </body>
 </html>

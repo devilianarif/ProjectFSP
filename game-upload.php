@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin-Game BLinc</title>
-<link rel="stylesheet" href="aset/style/admin-gameupload.css">
+<link rel="stylesheet" href="aset/style/admin-game-upload.css">
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -20,20 +20,13 @@
   <div class="header-menu">
    <a class="menu-link " href="dasboard.php">Dasboard</a>
    <a class="menu-link notify" href="member.php">Member</a>
-   <a class="menu-link" href="event.php">Tournament</a>
    <a class="menu-link is-active" href="game.php">Games</a>
   </div>
   <div class="search-bar">
    <input type="text" placeholder="Search">
   </div>
   <div class="header-profile">
-   <div class="notification">
-    <span class="notification-number">3</span>
-       <a href="#">
-    <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
-     <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" />
-    </svg></a>
-   </div>
+   <h3 style="color: white;">DevilianArif </h3>
    <img class="profile-img" src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="">
   </div>
  </div>
@@ -52,18 +45,55 @@
    </div>
   
    <div class="content-wrapper">
-    <div class="content-wrapper-header">
-   
-  <button id="openPopupload" class="open-upload">Upload Games</button>
-
- <div id="overlay" class="overlay-app"></div>
- <div class="popupload" id="popupload">
-    <div class="pop-upload__title">Upload
-        <svg class="close close-btn" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle" id="closePopupload" >
-            <circle cx="12" cy="12" r="10" />
-            <path d="M15 9l-6 6M9 9l6 6" />
-        </svg>
+     <div class="tainer">
+    <div class="bner">
+        <img alt="Banner image" height="500" src="aset/image/ml.jpg" width="1200"/>
     </div>
+  <div class="platons">
+    <div id="openPopupload" class="platon">
+       <svg
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M15.4695 11.2929C15.0789 10.9024 14.4458 10.9024 14.0553 11.2929C13.6647 11.6834 13.6647 12.3166 14.0553 12.7071C14.4458 13.0976 15.0789 13.0976 15.4695 12.7071C15.86 12.3166 15.86 11.6834 15.4695 11.2929Z"
+    fill="currentColor"
+  />
+  <path
+    d="M16.1766 9.17156C16.5671 8.78103 17.2003 8.78103 17.5908 9.17156C17.9813 9.56208 17.9813 10.1952 17.5908 10.5858C17.2003 10.9763 16.5671 10.9763 16.1766 10.5858C15.7861 10.1952 15.7861 9.56208 16.1766 9.17156Z"
+    fill="currentColor"
+  />
+  <path
+    d="M19.7121 11.2929C19.3216 10.9024 18.6885 10.9024 18.2979 11.2929C17.9074 11.6834 17.9074 12.3166 18.2979 12.7071C18.6885 13.0976 19.3216 13.0976 19.7121 12.7071C20.1027 12.3166 20.1027 11.6834 19.7121 11.2929Z"
+    fill="currentColor"
+  />
+  <path
+    d="M16.1766 13.4142C16.5671 13.0237 17.2003 13.0237 17.5908 13.4142C17.9813 13.8048 17.9813 14.4379 17.5908 14.8284C17.2003 15.219 16.5671 15.219 16.1766 14.8284C15.7861 14.4379 15.7861 13.8048 16.1766 13.4142Z"
+    fill="currentColor"
+  />
+  <path d="M6 12iD3XhCQfYF5sf6FaMrzrGFxzrKJ4u85L" fill="currentColor" />
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M7 5C3.13401 5 0 8.13401 0 12C0 15.866 3.13401 19 7 19H17C20.866 19 24 15.866 24 12C24 8.13401 20.866 5 17 5H7ZM17 7H7C4.23858 7 2 9.23858 2 12C2 14.7614 4.23858 17 7 17H17C19.7614 17 22 14.7614 22 12C22 9.23858 19.7614 7 17 7Z"
+    fill="currentColor"
+  />
+</svg>
+        <h3>Upload Game</h3>
+        
+    </div>
+    
+    <div id="overlay" class="overlay-app"></div>
+    <div class="popupload" id="popupload">
+        <div class="pop-upload__title">Upload
+            <svg class="close close-btn" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="closePopupload">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M15 9l-6 6M9 9l6 6" />
+            </svg>
+        </div>
 
     <div class="coninput">
         <!-- Progress Steps -->
@@ -164,7 +194,40 @@
         </div> <!-- End Slider coninput -->
     </div> <!-- End coninput -->
 </div>
-<button id="openPopuploadEvent" class="open-upload">Upload Event</button>
+        <div  id="openPopuploadEvent" class="platon">
+          <svg
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M16 7C15.4477 7 15 7.44772 15 8C15 8.55228 15.4477 9 16 9H19C19.5523 9 20 8.55228 20 8C20 7.44772 19.5523 7 19 7H16Z"
+    fill="currentColor"
+  />
+  <path
+    d="M15 12C15 11.4477 15.4477 11 16 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H16C15.4477 13 15 12.5523 15 12Z"
+    fill="currentColor"
+  />
+  <path
+    d="M16 15C15.4477 15 15 15.4477 15 16C15 16.5523 15.4477 17 16 17H19C19.5523 17 20 16.5523 20 16C20 15.4477 19.5523 15 19 15H16Z"
+    fill="currentColor"
+  />
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M3 3C1.34315 3 0 4.34315 0 6V18C0 19.6569 1.34315 21 3 21H21C22.6569 21 24 19.6569 24 18V6C24 4.34315 22.6569 3 21 3H3ZM21 5H13V19H21C21.5523 19 22 18.5523 22 18V6C22 5.44772 21.5523 5 21 5ZM3 5H11V19H3C2.44772 19 2 18.5523 2 18V6C2 5.44772 2.44772 5 3 5Z"
+    fill="currentColor"
+  />
+</svg>
+            <h3>Upload Event</h3>
+          
+        </div>
+       
+    </div>
+</div>
+
 
 <div id="overlayEvent" class="overlay-app"></div>
 <div class="popupload" id="popuploadEvent">
@@ -238,7 +301,6 @@
 </div>
 
     
-    </div>
 
 
     <div class="content-section">

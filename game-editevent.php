@@ -20,20 +20,13 @@
   <div class="header-menu">
    <a class="menu-link " href="dasboard.php">Dasboard</a>
    <a class="menu-link notify" href="member.php">Member</a>
-   <a class="menu-link" href="event.php">Tournament</a>
    <a class="menu-link is-active" href="game.php">Games</a>
   </div>
   <div class="search-bar">
    <input type="text" placeholder="Search">
   </div>
   <div class="header-profile">
-   <div class="notification">
-    <span class="notification-number">3</span>
-       <a href="#">
-    <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
-     <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" />
-    </svg></a>
-   </div>
+  <h3 style="color: white;">DevilianArif </h3>
    <img class="profile-img" src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="">
   </div>
  </div>
