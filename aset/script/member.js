@@ -1,3 +1,56 @@
+//paging
+
+const paginationContainer = document.querySelector('.pagination-anim');
+const previousPage = document.getElementById('prev-page');
+const nextPage = document.getElementById('nxt-page');
+
+let currentPage = 1;
+
+const totalNoOfPages = 10;
+
+let isDebouncing = false;
+const debounceTime = 500;
+
+const debounce = (func, delay) => {
+    let timeoutId;
+
+    return (...args) => {
+        clearTimeout(timeoutId);
+
+        timeoutId = setTimeout(() => {
+            func.apply(this, args);
+        }, delay);
+    };
+};
+
+const navigatePage = (bool) => {
+    const container = paginationContainer.querySelector('div ul');
+    const oldLiEle = container.querySelector('li');
+
+    const newLiEle = document.createElement('li');
+    newLiEle.textContent = currentPage;
+
+    paginationContainer.setAttribute('data-to', bool ? 'next' : 'previous');
+
+    bool ? container.appendChild(newLiEle) : container.insertBefore(newLiEle, oldLiEle);
+
+    newLiEle.addEventListener('animationend', event => {
+        container.removeChild(oldLiEle);
+        paginationContainer.removeAttribute('data-to');
+    }, {
+        once: true
+    });
+}
+
+previousPage.addEventListener('click', debounce(() => {
+    currentPage = (currentPage - 1) >= 1 ? currentPage - 1 : totalNoOfPages;
+    navigatePage(false);
+}, debounceTime));
+
+nextPage.addEventListener('click', debounce(() => {
+    currentPage = (currentPage + 1) <= totalNoOfPages ? currentPage + 1 : 1;
+    navigatePage(true);
+}, debounceTime));
 
 
 
