@@ -1,4 +1,5 @@
 <?php
+require_once("parent.php");
 
 class EventTeam extends ParentClass{
 	public function __construct(){
@@ -12,13 +13,13 @@ class EventTeam extends ParentClass{
 			$sql = "SELECT idevent, event_teams.idteam, team.name FROM event_teams INNER JOIN team 
 					ON event_teams.idteam = team.idteam WHERE event_teams.idevent=? AND name Like ?;";
 
-			$stmt = $this->mysqli->prepare($sql);
+			$stmt = $this->conn->prepare($sql);
 			$stmt -> bind_param("is", $idevent, $cari_persen);
 		} else{
 			$sql = "SELECT idevent, event_teams.idteam, team.name FROM event_teams INNER JOIN team 
 					ON event_teams.idteam = team.idteam WHERE event_teams.idevent=? AND name Like ? Limit ?,?;";
 
-			$stmt = $mysqli->prepare($sql);
+			$stmt = $this->conn->prepare($sql);
 			$stmt -> bind_param("isii", $idevent, $cari_persen, $offset, $limit);
 		}
 		$stmt->execute();
@@ -29,7 +30,7 @@ class EventTeam extends ParentClass{
 
 	public function insertEventTeam($idevent, $idteam){
 		$sql = "INSERT INTO event_teams (idevent, idteam) VALUES (?,?);";
-		$stmt = $this->mysqli->prepare($sql);
+		$stmt = $this->conn->prepare($sql);
 		$stmt -> bind_param("ii", $idevent, $idteam);
 		
 		$stmt->execute();
@@ -39,7 +40,7 @@ class EventTeam extends ParentClass{
 	public function updateEventTeam($idteam, $idevent)
 	{
 		$sql = "UPDATE event_teams SET idteam=?  WHERE event_teams.idevent=?; ";
-		$stmt = $this->mysqli->prepare($sql);
+		$stmt = $this->conn->prepare($sql);
 		$stmt -> bind_param("ii", $idteam, $idevent);
 		
 		$stmt->execute();
@@ -48,7 +49,7 @@ class EventTeam extends ParentClass{
 
 	public function deleteEventTeam($idevent, $idteam){
 		$sql = "DELETE FROM event_teams WHERE event_teams.idevent = ? AND event_teams.idteam = ?";
-		$stmt = $this->mysqli->prepare($sql);
+		$stmt = $this->conn->prepare($sql);
 		$stmt -> bind_param("ii", $idevent, $idteam);
 		
 		$stmt->execute();

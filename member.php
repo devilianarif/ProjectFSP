@@ -1,4 +1,5 @@
 <?php
+require_once("parent.php");
 
 class Member extends ParentClass{
 	public function __construct(){
@@ -11,12 +12,12 @@ class Member extends ParentClass{
 		if(is_null($limit)){
 			$sql = "SELECT * FROM member WHERE username Like ?;";
 
-			$stmt = $this->mysqli->prepare($sql);
+			$stmt = $this->conn->prepare($sql);
 			$stmt -> bind_param("s", $cari_persen);
 		} else{
 			$sql = "SELECT * FROM member WHERE username Like ? Limit ?,?;";
 
-			$stmt = $mysqli->prepare($sql);
+			$stmt = $this->conn->prepare($sql); 
 			$stmt -> bind_param("sii", $cari_persen, $offset, $limit);
 		}
 		$stmt->execute();
@@ -27,7 +28,7 @@ class Member extends ParentClass{
 
 	public function insertMember($fname, $lname, $username, $password){
 		$sql = "INSERT INTO member (fname, lname, username, password, profile) VALUES (?,?,?,?, 'member');";
-		$stmt = $this->mysqli->prepare($sql);
+		$stmt = $this->conn->prepare($sql);
 		$stmt -> bind_param("ssss", $fname, $lname, $username, $password);
 		
 		$stmt->execute();
@@ -37,7 +38,7 @@ class Member extends ParentClass{
 	public function updateMember($fname, $lname, $username, $password, $idmember)
 	{
 		$sql = "UPDATE member SET fname=?, lname =?, username=?, password=? WHERE member.idmember=?;";
-		$stmt = $this->mysqli->prepare($sql);
+		$stmt = $this->conn->prepare($sql);
 		$stmt -> bind_param("ssssi", $fname, $lname, $username, $password, $idmember);
 		
 		$stmt->execute();
@@ -46,7 +47,7 @@ class Member extends ParentClass{
 
 	public function deleteMember($idmember){
 		$sql = "DELETE FROM member WHERE idmember=?;";
-		$stmt = $this->mysqli->prepare($sql);
+		$stmt = $this->conn->prepare($sql);
 		$stmt -> bind_param("i", $idmember);
 		
 		$stmt->execute();

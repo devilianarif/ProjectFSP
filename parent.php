@@ -3,11 +3,11 @@ require_once("data.php");
 
 class ParentClass
 {
-	protected $conn
+	protected $conn;
 	function __construct()
 	{
-		$this->$conn = new mysqli("SERVER_NAME", "USER_NAME", "PASSWORD", "DB_NAME");
-		if ($conn->connect_errno) {
+		$this->conn = new mysqli(SERVER_NAME, USER_NAME, PASSWORD, DB_NAME);
+		if ($this->conn->connect_errno) {
     		die("Failed to connect to MySQL: " . $conn->connect_error);
 		}
 	}
