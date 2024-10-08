@@ -1,4 +1,5 @@
 <?php
+require_once("parent.php");
 
 class Achievement extends ParentClass{
 	public function __construct(){
@@ -12,13 +13,13 @@ class Achievement extends ParentClass{
 			$sql = "SELECT idachievement, achievement.idteam, achievement.name as achievementName, date, description, team.name as teamName FROM achievement 
 					INNER JOIN team ON achievement.idteam = team.idteam WHERE name Like ?;";
 
-			$stmt = $this->mysqli->prepare($sql);
+			$stmt = $this->conn->prepare($sql);
 			$stmt -> bind_param("s", $cari_persen);
 		} else{
 			$sql = "SELECT idachievement, achievement.idteam, achievement.name as achievementName, date, description, team.name as teamName FROM achievement 
 					INNER JOIN team ON achievement.idteam = team.idteam WHERE name Like ? Limit ?,?;";
 
-			$stmt = $mysqli->prepare($sql);
+			$stmt = $this->conn->prepare($sql);
 			$stmt -> bind_param("sii", $cari_persen, $offset, $limit);
 		}
 		$stmt->execute();
@@ -29,7 +30,7 @@ class Achievement extends ParentClass{
 
 	public function insertAchv($idteam, $name, $date, $desc){
 		$sql = "INSERT INTO achievement (idteam, name, date, description) VALUES (?,?,?,?);";
-		$stmt = $this->mysqli->prepare($sql);
+		$stmt = $this->conn->prepare($sql);
 		$stmt -> bind_param("isss", $idteam, $name, $date, $desc);
 		
 		$stmt->execute();
@@ -39,7 +40,7 @@ class Achievement extends ParentClass{
 	public function updateAchv($idteam, $name, $date, $desc, $idachv)
 	{
 		$sql = "UPDATE achievement SET idteam=?, name=?, date =?, description=? WHERE achievement.idachievement=?;";
-		$stmt = $this->mysqli->prepare($sql);
+		$stmt = $this->conn->prepare($sql);
 		$stmt -> bind_param("isssi", $idteam, $name, $date, $desc, $idachv);
 		
 		$stmt->execute();
@@ -48,7 +49,7 @@ class Achievement extends ParentClass{
 
 	public function deleteAchv($idachv){
 		$sql = "DELETE FROM achievement WHERE achievement.idachievement = ?";
-		$stmt = $this->mysqli->prepare($sql);
+		$stmt = $this->conn->prepare($sql);
 		$stmt -> bind_param("i", $idachv);
 		
 		$stmt->execute();
