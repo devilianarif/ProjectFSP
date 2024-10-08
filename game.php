@@ -6,19 +6,26 @@ class Game extends ParentClass{
 		parent::__construct();
 	}
 
-	public function getGame($cari="", $offset=null, $limit=null){
+	public function getGame($cari="", $offset=null, $limit=null, $idgame=null){
 		$cari_persen = "%".$cari."%";
 
-		if(is_null($limit)){
-			$sql = "SELECT * from game WHERE name Like ?;";
+		if($idgame != null){
+			$sql = "SELECT * from game WHERE idgame = ?;";
 
 			$stmt = $this->conn->prepare($sql);
-			$stmt -> bind_param("s", $cari_persen);
+			$stmt -> bind_param("i", $idgame);
 		} else{
-			$sql = "SELECT * from game WHERE name Like ? Limit ?,?;";
+			if(is_null($limit)){
+				$sql = "SELECT * from game WHERE name Like ?;";
 
-			$stmt = $this->conn->prepare($sql);
-			$stmt -> bind_param("sii", $cari_persen, $offset, $limit);
+				$stmt = $this->conn->prepare($sql);
+				$stmt -> bind_param("s", $cari_persen);
+			} else{
+				$sql = "SELECT * from game WHERE name Like ? Limit ?,?;";
+
+				$stmt = $this->conn->prepare($sql);
+				$stmt -> bind_param("sii", $cari_persen, $offset, $limit);
+			}
 		}
 		$stmt->execute();
 		$res = $stmt->get_result();
