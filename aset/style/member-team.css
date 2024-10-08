@@ -360,11 +360,11 @@ img {
 .content-wrapper-header {
 display: flex;
   align-items: center;
-justify-content: center;
+  justify-content: center;
   width: 100%;
   border-radius: 14px;
   padding: 20px 40px;
-
+  background-color:rgb(146 151 179 / 13%);
 }
 @media screen and (max-width: 415px) {
   .content-wrapper-header {
@@ -434,8 +434,9 @@ justify-content: center;
   transition: 0.3s;
   white-space: nowrap;
 }
-.open-popup-btn{
-  background-color: #7c2dfc;
+
+.open-upload{
+   background-color: #7c2dfc;
   border: none;
   padding: 8px 20px;
   color: #fff;
@@ -443,7 +444,15 @@ justify-content: center;
   cursor: pointer;
   transition: 0.3s;
   white-space: nowrap;
+  margin-right: 10px; /* Add margin to create space between buttons */
 }
+
+.open-upload:hover {
+  background-color: #1e59f1;
+}
+
+
+
 .content-wrapper-img {
   width: 186px;
   -o-object-fit: cover;
@@ -909,47 +918,674 @@ justify-content: center;
     summary { display: list-item; }
     [hidden], template { display: none; }
 
-.gallery {
-  display: flex;
-  gap: 1rem;
 
-  align-items: center; /* Center vertically */
-
+    /* Fokus pada input dan tombol */
+input:focus,
+.buton:focus {
+  outline: none;
 }
 
-.gallery > div {
-  flex: 0 0 auto; /* Prevent shrinking */
-  min-width: 50px; /* Set a minimum width for items */
-  max-width: 150px; /* Set a maximum width for items */
-  overflow: hidden;
-  border-radius: 1rem;
+.buton:hover,
+.reset:hover {
+  opacity: .85;
 }
 
-.mage {
+.buton:active,
+.reset:active {
+  opacity: .7;
+}
+
+/* coninput untuk form */
+.coninput {
   width: 100%;
-  height: auto; /* Ensure height scales proportionately */
-  transition: all 0.5s;
+  max-width: 70%;
+  margin: 0 auto;
+  background: #ffffff00;
+ 
+  border-radius: 10px;
+  position: relative;
+  top: 50%;
+  transform: scale(1);
+  transform-origin: top;
+  overflow: hidden;
+}
+
+/* Steps */
+.steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 10px; /* Space above steps */
+}
+
+.step {
+  width: 30%;
+  position: relative;
+  text-align: center;
+}
+
+.step .circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #ff3636;
+  margin: 0 auto 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.step.active .circle {
+  background-color: #5a8dee;
+  color: #fff;
+}
+
+.step, .text-span {
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 5px;
+  background-color: #ff3f3f;
+  position: relative;
+  border-radius: 2.5px;
+}
+
+.progress-bar .progress {
+  height: 100%;
+  width: 0;
+  background-color: #5a8dee;
+  border-radius: 2.5px;
+  transition: width 0.3s ease;
+}
+
+.slider-coninput {
+  overflow: hidden; /* Pastikan slider tidak meluap */
+  margin-top: 10px;
+  margin-bottom: 10px; /* Space below the slider */
+  position: relative; /* Posisi relatif untuk mengatur z-index jika diperlukan */
+}
+.slider {
+  display: flex;
+  transition: transform 0.3s ease;
+  width: 100%; /* Pastikan slider mengisi kontainer */
+}
+
+.slider-section {
+  min-width: 100%; /* Setiap section harus memiliki lebar 100% dari slider */
+  box-sizing: border-box;
+  padding: 0; /* Menghapus padding yang tidak perlu */
+}
+
+
+
+/* Heading */
+.text-h2 {
+  font-size: 1.4rem;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-align: center;
+}
+/* Input  */
+.Sinput[type="text"],
+.Sinput[type="date"],
+.Sinput[type="textarea"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #3544f3;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* fokus */
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+  border-color: #5a8dee;
+}
+
+textarea.Sinput {
+  resize: both; /* Mengizinkan perubahan ukuran horizontal dan vertikal */
+  min-height: 30%; /* Tinggi minimum */
+  width: 100%; /* Lebar 100% */
+  padding: 12px 15px; /* Padding yang konsisten */
+  border: 1px solid #3544f3; /* Batas yang sama seperti input lainnya */
+  border-radius: 25px; /* Sudut yang melengkung */
+  font-size: 1rem; /* Ukuran font yang konsisten */
+  font-family: 'Poppins', sans-serif; /* Font yang digunakan */
+   margin-bottom: 0;
+  box-sizing: border-box; /* Memastikan padding termasuk dalam lebar */
+}
+
+/* Gaya saat fokus */
+textarea.Sinput:focus {
+  border-color: #5a8dee; /* Ubah warna batas saat fokus */
+}
+
+
+/* Tombol */
+.buton {
+  background-color: #845aee;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+.buton:hover {
+  background-color: #ca3c59;
+}
+
+/* Button Group */
+.button-grouping {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button-grouping .buton {
+  flex: 1;
+}
+
+/* Tombol reset */
+.reset {
+  background-color: #e74c3c;
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+label.radio {
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 15px;
+}
+
+label.radio input {
+  visibility: hidden;
+}
+
+label.radio .emot {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: #f9f9f9;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+label.radio input:checked + .emot {
+  border-color: #5a8dee;
+  transform: scale(1.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .coninput {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .slider-section {
+    padding: 50px;
+  }
+}
+
+
+
+/* Upload Area */
+.upload-area {
+  width: 100%; /* Ubah menjadi 100% untuk responsif */
+  max-width: 600px; /* Maksimal lebar yang diinginkan */
+  padding: 0; /* Kurangi padding bawah untuk mengurangi ketinggian */
+  margin: 0 auto; /* Margin otomatis di tengah */
+  text-align: center;
+  /* Tambahkan min-height untuk mencegah area terlalu gepeng */
+  min-height: 300px;
+}.upload-area--open { /* Slid Down Animation */
+  animation: slidDown 500ms ease-in-out;
+}
+
+@keyframes slidDown {
+  from {
+    height: 28.125rem; /* 450px */
+  }
+
+  to {
+    height: 35rem; /* 560px */
+  }
+}
+
+/* Header */
+.upload-area__header {
+
+}
+
+.upload-area__title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0.3125rem;
+}
+
+.upload-area__paragraph {
+  font-size: 0.9rem;
+  color: rgb(255 255 255);
+  margin-top: 0;
+}
+
+
+.upload-area__tooltip {
+  position: relative;
+  color: rgb(255 171 171);
+  cursor: pointer;
+  transition: color 300ms ease-in-out;
+}
+
+.upload-area__tooltip:hover {
+  color: rgb(63, 134, 255);
+}
+
+.upload-area__tooltip-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -125%);
+  min-width: max-content;
+  background-color: rgb(255, 255, 255);
+  color: rgb(63, 134, 255);
+  border: 1px solid rgb(171, 202, 255);
+  padding: 0.625rem 1.25rem;
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transition: none 300ms ease-in-out;
+  transition-property: opacity, visibility;
+}
+
+.upload-area__tooltip:hover .upload-area__tooltip-data {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Drop Zoon */
+.upload-area__drop-zoon {
+  position: relative;
+  height: 5.25rem; /* 180px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px dashed rgb(171, 202, 255);
+  border-radius: 15px;
+    cursor: pointer;
+  transition: border-color 300ms ease-in-out;
+}
+
+.upload-area__drop-zoon:hover {
+  border-color: rgb(63, 134, 255);
+}
+
+.drop-zoon__icon {
+  display: flex;
+  font-size: 2.75rem;
+  color: rgb(255 255 255);
+  transition: opacity 300ms ease-in-out;
+}
+
+.drop-zoon__paragraph {
+  font-size: 0.9375rem;
+  color: rgb(255 255 255);
+  margin: 0;
+  margin-top: 0.625rem;
+  transition: opacity 300ms ease-in-out;
+}
+
+.drop-zoon:hover .drop-zoon__icon,
+.drop-zoon:hover .drop-zoon__paragraph {
+  opacity: 0.7;
+}
+
+.drop-zoon__loading-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  color: rgb(171, 202, 255);
+  z-index: 10;
+}
+
+.drop-zoon__preview-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  object-fit: contain;
+  padding: 0.5rem;
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+  transition: opacity 300ms ease-in-out;
+}
+
+.drop-zoon:hover .drop-zoon__preview-image {
+  opacity: 0.8;
+}
+
+.drop-zoon__file-input {
+  display: none;
+}
+
+/* (drop-zoon--over) Modifier Class */
+.drop-zoon--over {
+  border-color: rgb(63, 134, 255);
+}
+
+.drop-zoon--over .drop-zoon__icon,
+.drop-zoon--over .drop-zoon__paragraph {
+  opacity: 0.7;
+}
+
+/* (drop-zoon--Uploaded) Modifier Class */
+.drop-zoon--Uploaded {
+  
+}
+
+.drop-zoon--Uploaded .drop-zoon__icon,
+.drop-zoon--Uploaded .drop-zoon__paragraph {
+  display: none;
+}
+
+/* File Details Area */
+.upload-area__file-details {
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  text-align: left;
+  transition: none 500ms ease-in-out;
+  transition-property: opacity, visibility;
+  transition-delay: 500ms;
+}
+
+/* (file-details--open)  */
+.file-details--open {
+  height: auto;
+  visibility: visible;
+  opacity: 1;
+}
+
+.file-details__title {
+  font-size: 0.5rem;
+  font-weight: 500;
+  color: rgb(196, 195, 196);
+}
+
+/* Uploaded File */
+.uploaded-file {
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: none 500ms ease-in-out;
+  transition-property: visibility, opacity;
+}
+
+/* (uploaded-file--open)  */
+.uploaded-file--open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.uploaded-file__icon-container {
+  position: relative;
+  margin-right: 0.3125rem;
+}
+
+.uploaded-file__icon {
+  font-size: 0.5rem;
+  color: rgb(63, 134, 255);
+}
+
+.uploaded-file__icon-text {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  left: 190px;
+  transform: translateX(-50%);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+
+.uploaded-file__info {
+  position: relative;
+  top: -0.3125rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.uploaded-file__info::before,
+.uploaded-file__info::after {
+  content: '';
+  position: absolute;
+  bottom: -0.9375rem;
+  width: 0;
+  height: 0.5rem;
+  background-color: #ebf2ff;
+  border-radius: 0.625rem;
+}
+
+.uploaded-file__info::before {
+  width: 100%;
+}
+
+.uploaded-file__info::after {
+  width: 100%;
+  background-color: rgb(63, 134, 255);
+}
+
+/* Progress Animation */
+.uploaded-file__info--active::after {
+  animation: progressMove 800ms ease-in-out;
+  animation-delay: 300ms;
+}
+
+@keyframes progressMove {
+  from {
+    width: 0%;
+    background-color: transparent;
+  }
+
+  to {
+    width: 100%;
+    background-color: rgb(63, 134, 255);
+  }
+}
+
+.uploaded-file__name {
+  width: 100%;
+  max-width: 6.25rem; /* 100px */
+  display: inline-block;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.uploaded-file__counter {
+  font-size: 1rem;
+  color: rgb(196, 195, 196);
+}
+
+
+/* input text */
+
+/* Input Box Styles */
+/* Input Box */
+.input-box {
+  width: 100%; /* Ubah menjadi 100% untuk responsif */
+  max-width: 600px; /* Maksimal lebar yang diinginkan */
+background-color: rgb(195 124 124 / 0%);
+  box-shadow: 0 10px 60px rgb(80 40 212 / 20%);
+  border: 2px solid rgb(171, 202, 255);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 0.625rem auto; /* Margin otomatis di tengah */
+  font-size: 0.1rem;
+  color: rgb(63, 134, 255);
+  outline: none;
+  transition: border-color 300ms ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .upload-area,
+  .input-box {
+    max-width: 100%; /* Lebar penuh pada layar kecil */
+    padding: 1rem; /* Kurangi padding pada layar kecil */
+  }
+}
+
+/* Optional: Mobile responsiveness */
+@media (max-width: 425px) {
+  .upload-area,
+  .input-box {
+    padding: 0.5rem; /* Kurangi padding lebih banyak pada layar sangat kecil */
+  }
+}
+
+.input-box:focus {
+  border-color: rgb(63, 134, 255);
+}
+
+.input-box__label {
+  font-size: 0.2rem;
+  font-weight: 500;
+  color: rgb(196, 195, 196);
+  margin-bottom: 0.625rem;
   display: block;
 }
 
 
-/* Responsive styles */
-@media (max-width: 1024px) {
-  .gallery > div {
-      min-width: 50px; 
-max-width: 100px; 
-  }
+
+
+.input-box__text {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: rgb(0 0 0 / 79%);
+  border: 1px solid rgb(171, 202, 255);
+  border-radius: 10px;
+  font-size: 1rem;
+  color: rgb(63, 134, 255);
+  outline: none;
+  transition: border-color 300ms ease-in-out;
 }
-/* Responsive styles */
-@media (max-width: 768px) {
-  .gallery > div {
-  
-max-width: 20px; 
-  }
+
+.input-box__text:focus {
+  border-color: rgb(97 156 255);
 }
-.mage:hover {
-  transform: scale(1.4) rotate(12deg);
+
+.input-box__text::placeholder {
+  color: rgb(255 0 0);
+  font-size: 0.9375rem;
 }
+
+.input-box__text-area {
+  height: 150px;
+  resize: none;
+}
+
+/* Add hover effect */
+.input-box__text:hover {
+  border-color: rgb(224 63 255);
+  opacity: 0.9;
+}
+
+
+
+        /* Reset <select> defaults */
+        select {
+            appearance: none;
+            border: 0;
+            outline: 0;
+            background: none;
+            color: inherit;
+            box-shadow: none;
+              justify-content: center; /* Pusatkan secara horizontal */
+            align-items: center; /* Pusatkan secara vertikal */
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        /* Custom Select wrapper */
+        .select {
+            position: relative;
+            display: flex;
+         
+            background: linear-gradient(to left, #34495e 3rem, #2c3e50 3rem);
+            border-radius: 0.25rem;
+            overflow: hidden;
+        }
+
+     
+      .select select {
+            flex: 1;
+            padding: 1em;
+            cursor: pointer;
+            color: white; /* Change the text color for the select */
+            background-color: #283349; /* Change background color for the select */
+        }
+    .select select option {
+            background-color: #34495e; /* Background color for options */
+            color: white; /* Text color for options */
+        }
+
+        .select::after {
+            content: "\25BC";
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            transition: 0.25s all ease;
+            pointer-events: none; 
+        }
+
+        
+        .select:hover::after {
+            color: #f39c12;
+            animation: bounce 0.5s infinite;
+        }
+
+        @keyframes bounce {
+            25% {
+                transform: translateY(5px);
+            }
+            75% {
+                transform: translateY(-5px);
+            }
+        }
+
   .tainer {
             max-width: 1200px;
           
@@ -958,7 +1594,7 @@ max-width: 20px;
             color: #fff;
         }
        .bner {
-
+        
             position: relative;
             height: 200px; /* Further reduced height */
             display: flex;
@@ -967,8 +1603,35 @@ max-width: 20px;
             padding: 20px;
         }
         .bner img {
-            border-radius: 10px;
+             border-radius: 10px;
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+       .platons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+       .platon {
+          background: linear-gradient(to right, #e32dfc57, #5235f391);
+          padding: 20px;
+          text-align: center;
+          border-radius: 8px;
+          width: 40%; /* Adjusted width for two items */
+          margin: 0 10px;
+        }
+        .platon svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+        .platon h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .platon a {
+            color: #ff0000;
+            text-decoration: none;
+            font-weight: bold;
         }
