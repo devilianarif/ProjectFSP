@@ -156,11 +156,11 @@
                 <div class="content-wrapper">
                     <div class="content-wrapper-header">
                         <div class="gallery">
-                            <div class="mage"><img src="https://kodfun.github.io/Reels/ZoomRotate/1.png"></div>
-                            <div class="mage"><img src="https://kodfun.github.io/Reels/ZoomRotate/2.png"></div>
-                            <div class="mage"><img src="https://kodfun.github.io/Reels/ZoomRotate/3.png"></div>
-                            <div class="mage"><img src="https://kodfun.github.io/Reels/ZoomRotate/1.png"></div>
-                            <div class="mage"><img src="https://kodfun.github.io/Reels/ZoomRotate/2.png"></div>
+                            <div class="mage"><img src="aset/image/char 1.png"></div>
+                            <div class="mage"><img src="aset/image/char 2.png"></div>
+                            <div class="mage"><img src="aset/image/char 3.png"></div>
+                            <div class="mage"><img src="aset/image/char 1.png"></div>
+                            <div class="mage"><img src="aset/image/char 2.png"></div>
                         </div>
 
                     </div>
