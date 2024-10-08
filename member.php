@@ -5,7 +5,7 @@ class Member extends ParentClass{
 		parent::__construct();
 	}
 
-	public function getTeam($cari="", $offset=null, $limit=null){
+	public function getMember($cari="", $offset=null, $limit=null){
 		$cari_persen = "%".$cari."%";
 
 		if(is_null($limit)){
