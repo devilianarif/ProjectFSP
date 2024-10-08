@@ -11,13 +11,13 @@ class Achievement extends ParentClass{
 
 		if(is_null($limit)){
 			$sql = "SELECT idachievement, achievement.idteam, achievement.name as achievementName, date, description, team.name as teamName FROM achievement 
-					INNER JOIN team ON achievement.idteam = team.idteam WHERE teamName Like ?;";
+					INNER JOIN team ON achievement.idteam = team.idteam WHERE achievement.name Like ?;";
 
 			$stmt = $this->conn->prepare($sql);
 			$stmt -> bind_param("s", $cari_persen);
 		} else{
 			$sql = "SELECT idachievement, achievement.idteam, achievement.name as achievementName, date, description, team.name as teamName FROM achievement 
-					INNER JOIN team ON achievement.idteam = team.idteam WHERE teamName Like ? Limit ?,?;";
+					INNER JOIN team ON achievement.idteam = team.idteam WHERE achievement.name Like ? Limit ?,?;";
 
 			$stmt = $this->conn->prepare($sql);
 			$stmt -> bind_param("sii", $cari_persen, $offset, $limit);
