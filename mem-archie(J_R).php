@@ -75,7 +75,7 @@
   <div class="content-section">
      <button id="openPopuploadEvent" class="open-upload">Create New Archiement</button>
 
-<div id="overlayEvent" class="overlay-app"></div>
+<div id="overlayEvent"></div>
 <div class="popupload" id="popuploadEvent">
     <div class="pop-upload__title">Create Archiement
         <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle" id="closePopuploadEvent">
@@ -217,7 +217,7 @@
        <div class="button-wrapper">
        <button class="archie-btn content-button" data-popup="'.$index.'">View</button>
 
-        <div id="overlayArchiement" class="overlay-app"></div>
+        <div id="overlayArchiement"></div>
         <!-- Archie Pop-up for Post 1 -->
         <div class="popupload" id="popuploadArchie-'.$index.'">
             <div class="pop-upload__title"> '.$achvRow['achievementName'].'
@@ -287,12 +287,34 @@
             </div>
         </div>
         
-              
-            <div class="menu">
-             <button id="del" class="dropdown"> </button>
-            </div>
-           </div>
-          </li>';
+                                        <div class="pop-up">
+                                            <div class="pop-up__title">Update This
+                                                <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <path d="M15 9l-6 6M9 9l6 6"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="pop-up__subtitle">yakin anda ingin hapus ini ?</div>
+                                            <div class="checkbox-wrapper">
+                                                <input type="checkbox" id="check1" class="checkbox">
+                                                <label for="check1">ya, saya yakin!</label>
+                                            </div>
+                                            <div class="content-button-wrapper">
+                                                <button class="content-button status-button open close">Batal</button>
+                                                <button class="content-button status-button">Lanjutkan!</button>
+                                            </div>
+                                        </div>
+                                        <div class="menu">
+                                            <button class="dropdown">
+                                                <ul>
+
+                                                    <li class="status-button"><a href="#">delete</a></li>
+                                                </ul>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                ';
           $index++;
     }
 ?>
