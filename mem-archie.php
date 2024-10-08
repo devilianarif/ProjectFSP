@@ -379,6 +379,7 @@
                                 </li>
 
                         </div>
+                                <!-- paging -->
                         <div class="content-section">
                             <div class="container">
                                 <div class="pagination-component">
