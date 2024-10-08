@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin-Game BLinc</title>
-<link rel="stylesheet" href="aset/style/mem-editeam.css">
+<link rel="stylesheet" href="aset/style/mem-editarchive.css">
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -47,20 +47,22 @@
      <a class="main-header-link" href="game.php">Home</a>
      <a class="main-header-link" href="game-upload.php">Upload</a>
        <a class="main-header-link" href="game-event.php">Event</a>
-      <a class="main-header-link is-active" href="#">Edit Data Team</a>
+      <a class="main-header-link is-active" href="#">Edit Archive</a>
     </div>
 
    </div>
   
    <div class="content-wrapper">
     <div class="content-wrapper-header">
-<h2>Edit Team</h2>
+<h2>Edit Archive</h2>
     </div>
        <div class="content-section">
 <div class="kontai">
+
    <label for="game-select" class="select-label">Nama :</label>
    <div class="input-group" style="margin-top: 20px;">
       <div style="position: relative; width: calc(100% + 10px);">
+
 
          <input id="name" placeholder=" " type="text" style="width: 100%;"/>
          <label for="name">
@@ -68,7 +70,19 @@
          </label>
       </div>
    </div>
-   <label for="game-select" class="select-label">Pilih Game:</label>
+
+   <label for="game-select" class="select-label">Deskripsi :</label>
+   <div class="input-group" style="margin-top: 20px;">
+      <div style="position: relative; width: calc(100% + 10px);">
+         <input id="deskripsi" placeholder=" " type="text" style="width: 100%;"/>
+         <label for="deskripsi">
+            deskripsi
+         </label>
+      </div>
+   </div>
+
+
+   <label for="game-select" class="select-label">Game :</label>
    <div class="select">
                         <select>
                             <option value="1">Game1</option>
@@ -78,6 +92,9 @@
                     </div>
                     <br>
                     <br>
+
+   <label for="game-select" class="select-label">Date :</label>
+                    <input class="Sinput" type="date">
    <div class="submit-button" style="width: 700px;">
       Submit
    </div>
@@ -91,6 +108,6 @@
 </div>
 <!-- partial -->
      <script src='aset/script/jquery351.js'></script>
-  <script  src="aset/script/mem-editeam.js"></script>
+  <script  src="aset/script/mem-editarchive.js"></script>
 </body>
 </html>
