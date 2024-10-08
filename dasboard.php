@@ -170,32 +170,31 @@
   <div class="content-section">
      <div class="content-section-title">News</div>
      <ul>
-      
-       
-      
-      
-       
       <li class="lg-product">
        <div class="products">
-      <img src="aset/image/rdr-2.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
-        RDR 2
+     <img src="aset/image/dota-2.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
+          Dota 2
        </div>
        <span class="status">
         <span class="status-circle green"></span>
-        Teams</span>
+        Events</span>
        <div class="button-wrapper">
-        
+        <button class="content-button status-button open">Done</button>
         <div class="menu">
          <button class="dropdown">
           <ul>
-
-           <li><a href="#">Review</a></li>
+           <li><a href="game-editevent.php">update</a></li>
          <li class="status-button"><a href="#">delete</a></li>
           </ul>
          </button>
         </div>
        </div>
       </li>
+       
+      
+      
+       
+      
      </ul>
     </div>
     <div class="content-section">
@@ -237,5 +236,4 @@
   <script src="aset/script/script-main.js"></script>
 
 
-</body>
-</html>
+</body><chatgpt-sidebar data-gpts-theme="light"></chatgpt-sidebar><chatgpt-sidebar-popups data-gpts-theme="light"></chatgpt-sidebar-popups></html>
