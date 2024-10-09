@@ -231,7 +231,23 @@
 
                         </ul>
                     </div>
-
+<div class="content-section">
+                            <div class="container">
+                                <div class="pagination-component">
+                                    <div class="pagination-anim">
+                                        <button id="prev-page" aria-label="Previous Page" title="Go To Previous Page"></button>
+                                        <div>
+                                            <span>Page</span>
+                                            <ul>
+                                                <li>1</li>
+                                            </ul>
+                                            <span>of 10</span>
+                                        </div>
+                                        <button id="nxt-page" aria-label="Next Page" title="Go To Next Page"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
 
@@ -282,7 +298,23 @@
                     </div>
 
 
-
+<div class="content-section">
+                            <div class="container">
+                                <div class="pagination-component">
+                                    <div class="pagination-anim">
+                                        <button id="prev-page" aria-label="Previous Page" title="Go To Previous Page"></button>
+                                        <div>
+                                            <span>Page</span>
+                                            <ul>
+                                                <li>1</li>
+                                            </ul>
+                                            <span>of 10</span>
+                                        </div>
+                                        <button id="nxt-page" aria-label="Next Page" title="Go To Next Page"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     <div class="content-section">
                         <div class="content-section-title">Accepted</div>
                         <ul>
@@ -296,6 +328,7 @@
                                     History</span>
                                 <div class="button-wrapper">
                                     <button class="content-button status-button open">Done</button>
+
 
                                     <div class="pop-up">
                                         <div class="pop-up__title">Update This
@@ -314,6 +347,7 @@
                                             <button class="content-button status-button">Lanjutkan!</button>
                                         </div>
                                     </div>
+
                                     <div class="menu">
                                         <button class="dropdown">
                                             <ul>
@@ -328,6 +362,23 @@
 
                         </ul>
                     </div>
+<div class="content-section">
+                            <div class="container">
+                                <div class="pagination-component">
+                                    <div class="pagination-anim">
+                                        <button id="prev-page" aria-label="Previous Page" title="Go To Previous Page"></button>
+                                        <div>
+                                            <span>Page</span>
+                                            <ul>
+                                                <li>1</li>
+                                            </ul>
+                                            <span>of 10</span>
+                                        </div>
+                                        <button id="nxt-page" aria-label="Next Page" title="Go To Next Page"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
 

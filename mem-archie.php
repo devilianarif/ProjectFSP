@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin-Game BLinc</title>
-    <link rel="stylesheet" href="aset/style/mem-archie.css">
+    <link rel="stylesheet" href="aset/style/memarchie.css">
 </head>
 
 <body>
@@ -328,6 +328,8 @@
                                                             </strong>
                                                             2023-10-01
                                                         </div>
+
+
                                                     </div>
                                                     <div class="game-box">
                                                         <img alt="Game Image" height="80" src="https://storage.googleapis.com/a1aa/image/Oj06EwoHNezUaakYebXJPJ0qgEAGtWjaGr0FKDhLvpjs8eInA.jpg" width="80">
@@ -341,6 +343,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+
 
                                                 <!-- POPUP-->
 
@@ -378,9 +382,11 @@
                                     </div>
                                 </li>
 
-                        </div>
-                                <!-- paging -->
-                        <div class="content-section">
+
+
+
+                            </ul>
+                            <div class="content-section">
                             <div class="container">
                                 <div class="pagination-component">
                                     <div class="pagination-anim">
@@ -397,6 +403,8 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -407,5 +415,8 @@
     <!-- partial -->
     <script src="aset/script/jquery351.js"></script>
     <script src="aset/script/mem-archie.js"></script>
+
+
+</body>
 
 </html>

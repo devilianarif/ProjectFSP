@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin-Game BLinc</title>
-    <link rel="stylesheet" href="aset/style/admin-game.css">
+    <link rel="stylesheet" href="aset/style/admingame.css">
     <!--<link rel="stylesheet" href="./style.css">-->
 
 </head>
@@ -17,7 +17,10 @@
 
         </video>
     </div>
+
+
     <div class="app">
+
         <div class="header">
             <div class="menu-circle"></div>
             <div class="header-menu">
@@ -196,7 +199,23 @@
 
                         </div>
 
-
+<div class="content-section">
+                            <div class="container">
+                                <div class="pagination-component">
+                                    <div class="pagination-anim">
+                                        <button id="prev-page" aria-label="Previous Page" title="Go To Previous Page"></button>
+                                        <div>
+                                            <span>Page</span>
+                                            <ul>
+                                                <li>1</li>
+                                            </ul>
+                                            <span>of 10</span>
+                                        </div>
+                                        <button id="nxt-page" aria-label="Next Page" title="Go To Next Page"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="content-section">
                             <div class="content-section-title">News</div>
                             <ul>
@@ -241,6 +260,23 @@
 
 
                             </ul>
+                            <div class="content-section">
+                            <div class="container">
+                                <div class="pagination-component">
+                                    <div class="pagination-anim">
+                                        <button id="prev-page" aria-label="Previous Page" title="Go To Previous Page"></button>
+                                        <div>
+                                            <span>Page</span>
+                                            <ul>
+                                                <li>1</li>
+                                            </ul>
+                                            <span>of 10</span>
+                                        </div>
+                                        <button id="nxt-page" aria-label="Next Page" title="Go To Next Page"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </div>
 
 
@@ -248,8 +284,11 @@
                     </div>
                 </div>
             </div>
+
             <div class="overlay-app"></div>
         </div>
+
+
         <!-- partial -->
         <script src="aset/script/jquery351.js"></script>
         <script src="aset/script/script-maingame.js"></script>
