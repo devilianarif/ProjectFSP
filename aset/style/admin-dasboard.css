@@ -848,7 +848,7 @@ background-image: url("https://www.transparenttextures.com/patterns/cubes.png"),
     summary { display: list-item; }
     [hidden], template { display: none; }
 
-/*paging*/
+    /*paging*/
 
         .pagination-component * {
     margin: 0;
