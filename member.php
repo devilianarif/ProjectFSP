@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin-Game BLinc</title>
-<link rel="stylesheet" href="aset/style/member.css">
+<link rel="stylesheet" href="aset/style/member2.css">
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -60,6 +60,48 @@
             <div class="points">terdapat 50 dari 100 member aktif dalam tim</div>
         </div>
     </div>
+  <div class="content-section">
+     <div class="content-section-title">List Member</div>
+      <ul>
+    <li class="lg-product">
+       <div class="products">
+     <img src="aset/image/dota-2.jpg" alt="img" style="border:1px solid #3291b8; margin-right: 10px;">
+          Royyanzzzzzzz
+       </div>
+       <span class="status">
+        <span class="status-circle green"></span>
+        Full Name</span>
+       <div class="button-wrapper">
+
+
+          <div class="pop-up">
+         <div class="pop-up__title">Update This 
+          <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+           <circle cx="12" cy="12" r="10" />
+           <path d="M15 9l-6 6M9 9l6 6" />
+          </svg>
+         </div>
+         <div class="pop-up__subtitle">yakin anda ingin hapus ini ?</div>
+         <div class="checkbox-wrapper">
+          <input type="checkbox" id="check1" class="checkbox">
+          <label for="check1">ya, saya yakin!</label>
+         </div>
+         <div class="content-button-wrapper">
+          <button class="content-button status-button open close">Batal</button>
+          <button class="content-button status-button">Lanjutkan!</button>
+         </div>
+        </div>
+        <div class="menu">
+         <button class="dropdown">
+          <ul>
+        
+         <li class="status-button"><a href="#">delete</a></li>
+          </ul>
+         </button>
+        </div>
+       </div>
+      </li>
+
 
   
  
@@ -70,6 +112,24 @@
 
 
 </div>
+<div class="content-section">
+                            <div class="container">
+                                <div class="pagination-component">
+                                    <div class="pagination-anim">
+                                        <button id="prev-page" aria-label="Previous Page" title="Go To Previous Page"></button>
+                                        <div>
+                                            <span>Page</span>
+                                            <ul>
+                                                <li>1</li>
+                                            </ul>
+                                            <span>of 10</span>
+                                        </div>
+                                        <button id="nxt-page" aria-label="Next Page" title="Go To Next Page"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 
    </div>
   </div>
