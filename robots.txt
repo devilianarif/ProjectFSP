@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /Class
+Disallow: /aset
+Disallow: /Process
+Disallow: /image
+Allow: /admin
+Allow: /member
