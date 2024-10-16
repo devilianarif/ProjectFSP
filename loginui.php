@@ -7,6 +7,21 @@
     session_unset();
 ?>
 
+<?php
+    if(isset($_GET['error'])){
+        $message = "message";
+        if($_GET['error'] == 1){
+            $message = "Username or Password is incorrect";
+        } else if($_GET['error'] == 2){
+            $message = "Username or Password is empty";
+        }
+        echo "<script>alert('$message');</script>";
+    }
+
+    if(isset($_GET['pesan'])){
+        echo "<script>alert('".$_GET['pesan']."');</script>";
+    }
+?>
 
 <html lang="en">
 <head>
