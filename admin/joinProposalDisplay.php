@@ -53,14 +53,6 @@
 		$offsetR = ($pageR-1) * $limit;
 	}
 ?>
-	
-<?php
-	if(isset($_POST["process"])){
-		if ($_POST["process"] == 'edit'){
-			echo $prop->updateProposal($_POST['status'], $_POST['idproposal'], $_POST["idteam"], $_POST["idmember"], $_POST["description"]);
-		}
-	}
-?>
 
 <html>
 <head>
@@ -90,6 +82,13 @@
 <div class="tempTop">
 	<h1 style="color: #f8f9fa; margin: 0px; float: left;">INFORMATICS</h1>
 </div>
+<?php
+	if(isset($_POST["process"])){
+		if ($_POST["process"] == 'edit'){
+			echo $prop->updateProposal($_POST['status'], $_POST['idproposal'], $_POST["idteam"], $_POST["idmember"], $_POST["description"]);
+		}
+	}
+?>
 <div class="content">
 <?php //TABLE DISPLAY WAITING
 	echo '<table border="1" style="width:50%">
