@@ -9,9 +9,9 @@ class Team extends ParentClass{
 	public function getTeam($cari="", $offset=null, $limit=null, $idteam=null){
 		$cari_persen = "%".$cari."%";
 
-		if(!is_null($idteam)){
+		if(!is_null($idteam)){	
 			$sql = "SELECT idteam, team.idgame, team.name as teamname, game.name as gamename 
-				from team INNER JOIN game ON team.idgame = game.idgame WHERE idteam = ?;";
+			from team INNER JOIN game ON team.idgame = game.idgame WHERE idteam = ?;";
 
 			$stmt = $this->conn->prepare($sql);
 			$stmt -> bind_param("i", $idteam);
@@ -36,13 +36,22 @@ class Team extends ParentClass{
 		return $res; 
 	} 
 
+	public function nameCheck($name=null){
+		$sql = "SELECT * from team WHERE name = ?;";
+		$stmt = $this->conn->prepare($sql);
+		$stmt -> bind_param("s", $name);
+		$stmt->execute();
+		$res = $stmt->get_result();
+		
+		return $res; 
+	} 
+
 	public function insertTeam($idgame, $name){
 		$sql = "INSERT INTO team (idgame, name) VALUES (?, ?);";
 		$stmt = $this->conn->prepare($sql);
 		$stmt -> bind_param("is", $idgame, $name);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 
 	public function updateTeam($idgame, $name, $idteam)
@@ -52,7 +61,6 @@ class Team extends ParentClass{
 		$stmt -> bind_param("isi", $idgame, $name, $idteam);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 
 	public function deleteTeam($idteam){
@@ -61,7 +69,6 @@ class Team extends ParentClass{
 		$stmt -> bind_param("i", $idteam);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 }
 

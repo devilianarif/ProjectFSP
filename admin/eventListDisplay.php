@@ -10,8 +10,8 @@
 	    $res = $member->getMember(null,null,null,$_SESSION['userid']);
 	    $loggedUser = $res->fetch_assoc();
 
-	    if($loggedUser["profile"]!="admin"){ header("location: ..\loginui.php"); }
-   	} else{ header("location: ..\loginui.php"); }
+	    if($loggedUser["profile"]!="admin"){ header("location: ..\index.php"); }
+   	} else{ header("location: ..\index.php"); }
 ?>
 
 <?php
@@ -37,38 +37,66 @@
 	}
 ?>
 
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Admin Event List Display</title>
+	<style type="text/css">
+		body{ 
+			font-family: "Arial"; 
+			margin: 0px;
+		}
+		.tempTop{
+			background-color: #00193d;
+			height: 50px;
+			width: 100%;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 50px;
+			padding-left: 5%; 
+		}
+		.content{
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+<div class="tempTop">
+	<h1 style="color: #f8f9fa; margin: 0px; float: left;">INFORMATICS</h1>
+</div>
 <?php
 	if(isset($_POST["process"])){
 		if($_POST["process"] == 'delete'){
 			echo $event->deleteEvent($_POST["idevent"]);
 		} else if ($_POST["process"] == 'add'){
 			if(!empty($_POST['name']) && !empty($_POST['date']) && !empty($_POST['desc'])){
-				echo $event->insertEvent($_POST['name'], $_POST['date'], $_POST['desc']);
+				$eventCheck = $event->nameCheck($_POST['name'])->fetch_assoc();
+				if(isset($eventCheck)){
+					echo "Event name already used";
+				} else{
+					echo $event->insertEvent($_POST['name'], $_POST['date'], $_POST['desc']);
+				}			
 			} else{
 				echo "Insert Failed";
 			}
 		} else if ($_POST["process"] == 'edit'){
 			if(!empty($_POST['name']) && !empty($_POST['date']) && !empty($_POST['desc']) && !empty($_POST["idevent"])){
-				echo $event->updateEvent($_POST['name'], $_POST['date'], $_POST['desc'], $_POST["idevent"]);
+
+				$oldData = $event->getEvent(null, null, null, $_POST['idevent'])->fetch_assoc();
+				$eventCheck = $event->nameCheck($_POST['name'])->fetch_assoc();
+				if(isset($eventCheck) && $oldData['name'] != $eventCheck['name']){
+					echo "Event name already used";
+				} else{
+					echo $event->updateEvent($_POST['name'], $_POST['date'], $_POST['desc'], $_POST["idevent"]);
+				}				
 			} else{
 				echo "Edit Failed";
 			}
 		}
-
-		else if($_POST["process"] == 'add'){
-			
-		}
 	}
 ?>
-
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Admin Event List Display</title>
-</head>
-<body>
-
+<div class="content">
 
 
 <?php //TABLE DISPLAY
@@ -80,12 +108,12 @@
 
 		<td> <form action='eventListDisplay.php?page=$page&cari=$cari' method='POST'>
 		<input type='hidden' name='action' value= 'add'>
-		<button type='submit'>Tambah Data</button> </form> </td>
+		<button type='submit'>Add Data</button> </form> </td>
 	<tr> 
 		<th>Event Name</th>
 		<th>Date</th>
 		<th>Description</th> 
-		<th colspan=2>Aksi</th>
+		<th colspan=2>Action</th>
 	</tr>";
 
 	$events = $event->getEvent($cari, $offset, $limit);
@@ -103,10 +131,9 @@
 
 		//DELETE
 		echo "<td> <form action='eventListDisplay.php?page=$page&cari=$cari' method='POST'>
-			<input type='hidden' name='inputTable' value='eventList'>
 			<input type='hidden' name='idevent' value='".htmlspecialchars($eventsRow['idevent'])."'>
 			<input type='hidden' name='process' value= 'delete'>
-			<button type='submit'>Hapus Data</button> </form> </td> </tr>";
+			<button type='submit'>Delete Data</button> </form> </td> </tr>";
 	}
 	echo "</table>" ;
 
@@ -159,6 +186,7 @@
 			</form>";
 		}}
 	?>
+</div>
 </div>
 </body>
 </html>

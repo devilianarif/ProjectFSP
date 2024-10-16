@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 
 <?php
-	require_once('class\teamMember.php');
-	require_once('class\team.php');
-	include "class\paging.php";
+	require_once('..\Class\member.php');
+    $member = new member();
+    session_start();
+
+   	//CHECK PROFILE
+   	if(isset($_SESSION['userid'])){
+	    $res = $member->getMember(null,null,null,$_SESSION['userid']);
+	    $loggedUser = $res->fetch_assoc();
+
+	    if($loggedUser["profile"]!="admin"){ header("location: ..\index.php"); }
+   	} else{ header("location: ..\index.php"); }
+?>
+
+<?php
+	require_once('..\Class\teamMember.php');
+	require_once('..\Class\team.php');
+	include "..\Class\paging.php";
 	$teamMember = new teamMember();
-	$limit = 2;
+	$team = new Team();
+	$limit = 5;
 	$cari;
 	$page;
 	
@@ -22,15 +37,14 @@
 		$page = $_GET['page'];
 		$offset = ($page-1) * $limit;
 	}
-?>
 
-<?php //BELUM KEGANTI
-	if(isset($_POST["process"])){ 
-		if($_POST["process"] == 'delete'){
-			echo $teamMember->deleteTeamMembe( $_POST["idteam"], $_POST["idmember"]);
-		} else if ($_POST["process"] == 'edit'){
-			echo $achv->updateTeamMembe($_POST['idteam'], $_POST['idmember'], $_POST['desc'], $_POST["idteam"], $_POST["idmember"]);
+	if(isset($_GET['idteam'])){ //STOP TOUCHING THE URL, GET IS FOR YOUR CONVENIENCE 
+		$userUsil = $team->getTeam(null, null, null, $_GET['idteam'])->fetch_assoc();
+		if(!isset($userUsil)){
+			header("location: teamDisplay.php");
 		}
+	} else{
+		header("location: teamDisplay.php");
 	}
 ?>
 
@@ -39,11 +53,44 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Admin Member Display</title>
+	<style type="text/css">
+		body{ 
+			font-family: "Arial"; 
+			margin: 0px;
+		}
+		.tempTop{
+			background-color: #00193d;
+			height: 50px;
+			width: 100%;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 50px;
+			padding-left: 5%; 
+		}
+		.content{
+			margin: 10px;
+		}
+	</style>
 </head>
 <body>
-
+<div class="tempTop">
+	<h1 style="color: #f8f9fa; margin: 0px; float: left;">INFORMATICS</h1>
+</div>
+<?php
+	if(isset($_POST["process"])){ 
+		if($_POST["process"] == 'delete'){
+			echo $teamMember->deleteTeamMember($_POST["idmember"], $_GET['idteam']);
+		} else if ($_POST["process"] == 'edit'){
+			if(!empty($_POST['desc']) && !empty($_POST['idmember']) && !empty($_GET['idteam'])){
+				echo $teamMember->updateTeamMember($_POST['desc'], $_POST["idmember"], $_GET['idteam']);
+			} else{
+				echo "Edit Failed";
+			}
+		}
+	}
+?>
+<div class="content">
 <?php //TABLE DISPLAY
-	$team = new Team();
 	$teams = $team->getTeam("", $offset, $limit, $_GET['idteam']);
 	$team = $teams->fetch_assoc();
 
@@ -54,7 +101,7 @@
 	<tr> 
 		<th>Member Name</th>
 		<th>Description</th> 
-		<th colspan=2>Aksi</th>
+		<th colspan=2>Action</th>
 	</tr>";
 
 	$members = $teamMember->getTeamMember( $_GET['idteam'], $cari, $offset, $limit);
@@ -64,17 +111,16 @@
 		echo "<td>". $memberRow['description']. "</td>";
 
 		//UPDATE
-		echo "<td> <form action='memberDisplay.php?idteam=".$_GET['idteam']."' method='POST'>
+		echo "<td> <form action='memberDisplay.php?idteam=".$_GET['idteam']."&page=$page&cari=$cari' method='POST'>
 			<input type='hidden' name='action' value= 'edit'>
 			<input type='hidden' name='idmember' value= '".htmlspecialchars($memberRow['idmember'])."'>
 			<button type='submit'>Edit Data</button> </form> </td>";
 
 		//DELETE
-		echo "<td> <form action='deleteProcess.php' method='POST'>
+		echo "<td> <form action='memberDisplay.php?idteam=".$_GET['idteam']."&page=$page&cari=$cari' method='POST'>
+			<input type='hidden' name='process' value= 'delete'>
 			<input type='hidden' name='idmember' value= '".htmlspecialchars($memberRow['idmember'])."'>
-			<input type='hidden' name='team' value= '".$_GET['idteam']."'>
-			<input type='hidden' name='inputTable' value='member'>
-			<button type='submit'>Keluarkan</button> </form> </td> </tr>";
+			<button type='submit'>Remove</button> </form> </td> </tr>";
 	}
 	echo "</table>" ;
 
@@ -98,7 +144,7 @@
 
 			echo "<input type='hidden' name='idmember' value='".$_POST['idmember']."'>"; //ID MEMBER
 			echo "<input type='hidden' name='idteam' value='".$_GET['idteam']."'>"; //ID TEAM
-			echo "<input type='hidden' name='inputTable' value='member'>"; //IDENTIFIER
+			echo "<input type='hidden' name='process' value= 'edit'>";
 
 			$member = $teamMember->getTeamMember( $_GET['idteam'], $cari, $offset, $limit, $_POST['idmember']);
 			$edited = $member->fetch_assoc();
@@ -113,6 +159,6 @@
 	?>
 </div>
 
-
+</div>
 </body>
 </html>

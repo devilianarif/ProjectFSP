@@ -62,7 +62,6 @@ class teamMember extends ParentClass{
 		$stmt -> bind_param("iis", $idteam, $idmember, $desc);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 
 	public function updateTeamMember($desc, $idmember, $idteam)
@@ -72,7 +71,6 @@ class teamMember extends ParentClass{
 		$stmt -> bind_param("sii", $desc, $idmember, $idteam);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 
 	public function deleteTeamMember($idmember, $idteam){
@@ -81,7 +79,6 @@ class teamMember extends ParentClass{
 		$stmt -> bind_param("ii", $idmember, $idteam);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 }
 

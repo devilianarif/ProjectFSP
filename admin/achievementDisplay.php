@@ -10,8 +10,8 @@
 	    $res = $member->getMember(null,null,null,$_SESSION['userid']);
 	    $loggedUser = $res->fetch_assoc();
 
-	    if($loggedUser["profile"]!="admin"){ header("location: ..\loginui.php"); }
-   	} else{ header("location: ..\loginui.php"); }
+	    if($loggedUser["profile"]!="admin"){ header("location: ..\index.php"); }
+   	} else{ header("location: ..\index.php"); }
 ?>
 
 <?php
@@ -37,7 +37,37 @@
 		$offset = ($page-1) * $limit;
 	}
 ?>
-	
+
+<html>
+<head>
+<div class="tempTop">
+	<h1 style="color: #f8f9fa; margin: 0px; float: left;">INFORMATICS</h1>
+</div>
+<div class="content">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Admin Achievement Display</title>
+	<style type="text/css">
+		body{ 
+			font-family: "Arial"; 
+			margin: 0px;
+		}
+		.tempTop{
+			background-color: #00193d;
+			height: 50px;
+			width: 100%;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 50px;
+			padding-left: 5%; 
+		}
+		.content{
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+
 <?php
 	if(isset($_POST["process"])){
 		if($_POST["process"] == 'delete'){
@@ -59,16 +89,6 @@
 	}
 ?>
 
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Admin Achievement Display</title>
-</head>
-<body>
-
-
-
 <?php //TABLE DISPLAY
 	echo "<table border='1'>
 	<tr>
@@ -76,13 +96,13 @@
 
 		<td> <form action='achievementDisplay.php?page=$page&cari=$cari' method='POST'>
 		<input type='hidden' name='action' value= 'add'>
-		<button type='submit'>Tambah Data</button> </form> </td>
+		<button type='submit'>Add Data</button> </form> </td>
 	<tr> 
 		<th>Achievement</th>
 		<th>Date Recieved</th>
 		<th>Team Name</th>
 		<th>Description</th> 
-		<th colspan=2>Aksi</th>
+		<th colspan=2>Action</th>
 	</tr>";
 
 	$achievements = $achv->getAchv($cari, $offset, $limit);
@@ -103,8 +123,7 @@
 		echo "<td> <form action='achievementDisplay.php?page=$page&cari=$cari' method='POST'>
 			<input type='hidden' name='idachv' value='".htmlspecialchars($acvRow['idachievement'])."'>
 			<input type='hidden' name='process' value= 'delete'>
-			<input type='hidden' name='inputTable' value='achievement'>
-			<button type='submit'>Hapus Data</button> </form> </td> </tr>";
+			<button type='submit'>Delete Data</button> </form> </td> </tr>";
 	}
 	echo "</table>" ;
 
@@ -181,6 +200,7 @@
 			}
 		}
 	?>
+</div>
 </div>
 </body>
 </html>

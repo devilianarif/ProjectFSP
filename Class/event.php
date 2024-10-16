@@ -33,13 +33,22 @@ class Event extends ParentClass{
 		return $res; 
 	} 
 
+	public function nameCheck($name=null){
+		$sql = "SELECT * from event WHERE name = ?;";
+		$stmt = $this->conn->prepare($sql);
+		$stmt -> bind_param("s", $name);
+		$stmt->execute();
+		$res = $stmt->get_result();
+		
+		return $res; 
+	} 
+	
 	public function insertEvent($name, $date, $desc){
 		$sql = "INSERT INTO event (name, date, description) VALUES (?,?,?);";
 		$stmt = $this->conn->prepare($sql);
 		$stmt -> bind_param("sss", $name, $date, $desc);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 
 	public function updateEvent($name, $date, $desc, $idevent)
@@ -49,7 +58,6 @@ class Event extends ParentClass{
 		$stmt -> bind_param("sssi", $name, $date, $desc, $idevent);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 
 	public function deleteEvent($idevent){
@@ -58,7 +66,6 @@ class Event extends ParentClass{
 		$stmt -> bind_param("i", $idevent);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 }
 

@@ -4,6 +4,7 @@
     require_once('class\member.php');
     $member = new member();
     session_start();
+    session_unset();
 ?>
 
 

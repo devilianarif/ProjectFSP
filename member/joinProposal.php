@@ -10,14 +10,18 @@
 	    $res = $member->getMember(null,null,null,$_SESSION['userid']);
 	    $loggedUser = $res->fetch_assoc();
 
-	    if($loggedUser["profile"]!="admin"){ header("location: ..\index.php"); }
+	    if($loggedUser["profile"]!="member"){ header("location: ..\index.php"); }
    	} else{ header("location: ..\index.php"); }
 ?>
 
 <?php
 	require_once('..\Class\proposal.php');
+	require_once('..\Class\teamMember.php');
+	require_once('..\Class\Team.php');
 	include "..\Class\paging.php";
 	$prop =  new Proposal();
+	$teamMember =  new teamMember();
+	$team =  new Team();
 	$limit = 5;
 	$cari;
 	$pageW; $pageA; $pageR;
@@ -55,10 +59,15 @@
 ?>
 	
 <?php
-	if(isset($_POST["process"])){
-		if ($_POST["process"] == 'edit'){
-			echo $prop->updateProposal($_POST['status'], $_POST['idproposal'], $_POST["idteam"], $_POST["idmember"], $_POST["description"]);
-		}
+	$unavailableTeamID = array(); //GET TEAMS THAT ARE ALREASY ADDED
+	$joinedTeam = $teamMember->getTeamMember(null, null, null, null, $_SESSION['userid']);
+	$waitingProp = $prop->getProposal(null, null, null, $_SESSION['userid'], "waiting");
+
+	while($joinedTeams = $joinedTeam->fetch_assoc()){ //GET ALL TEAM USER HAS JOINED
+		$unavailableTeamID[] = $joinedTeams['idteam'];
+	}
+	while($waitProp = $waitingProp->fetch_assoc()){ //GET ALL WAITING PROP TO PREVENT SPAM
+		$unavailableTeamID[] = $waitProp['idteam'];
 	}
 ?>
 
@@ -90,51 +99,84 @@
 <div class="tempTop">
 	<h1 style="color: #f8f9fa; margin: 0px; float: left;">INFORMATICS</h1>
 </div>
+<?php
+	if(isset($_POST["process"])){
+		if ($_POST["process"] == 'add'){
+			if(!empty($_SESSION['userid']) && !empty($_POST["idteam"]) && !empty($_POST["description"])){
+				
+				if(!in_array($_POST["idteam"], $unavailableTeamID)){
+					echo $prop->insertProposal($_SESSION['userid'], $_POST["idteam"], $_POST["description"]);
+				} else{
+					echo "You are already in that team/applying for that team";
+				}
+			} else{
+				echo "Add Failed";
+			}
+		} else if($_POST["process"] == 'delete'){
+			echo $prop->deleteProposal($_POST["idproposal"]);
+		}
+	} 
+?>
+
 <div class="content">
 <?php //TABLE DISPLAY WAITING
 	echo '<table border="1" style="width:50%">
 	<tr>
-		<th colspan=5> "Waiting" Proposals </th>
+		<th colspan=4> "Waiting" Proposals </th>
+		<td> <form action="?pageW='.$pageW.'&pageA='.$pageA.'&pageR='.$pageR.'&cari='.$cari.'" method="POST">
+		<input type="hidden" name="action" value= "add">
+		<button type="submit">Add Data</button> </form> </td>
 	</tr>
 	<tr> 
 		<th>Member Name</th>
 		<th>Team Name</th> 
 		<th>Description</th>
-		<th colspan=2>Status</th>
+		<th>Status</th>
+		<th>Action</th>
 	</tr>';
 
-	$proposals = $prop->getProposal($cari, $offsetW, $limit, null, "waiting");
+	$proposals = $prop->getProposal($cari, $offsetW, $limit, $_SESSION['userid'], "waiting");
 	while($rows = $proposals->fetch_assoc()) {
 		echo "<tr>";
 		echo "<td>". $rows['fname'].' "'.$rows['username'].'" '.$rows['lname'] ."</td>";
 		echo "<td>". $rows['name']. "</td>";
 		echo "<td>". $rows['description']. "</td>";
+		echo "<td>". $rows['status']. "</td>";
 
-		//APPROVE
-		echo"<form action=?pageW=$pageW&pageA=$pageA&pageR=$pageR&cari=$cari method='POST'>
-			<input type='hidden' name='idteam' value='".$rows['idteam']."'>
-			<input type='hidden' name='idmember' value= '".$rows['idmember']."'>
-			<input type='hidden' name='description' value= '".$rows['description']."'>
-			<input type='hidden' name='idproposal' value= '".$rows['idjoin_proposal']."'>
-			<input type='hidden' name='process' value= 'edit'>
-			<td> <input type='hidden' name='status' value= 'approved'>
-			<button type='submit'>Approve</button> </form> </td>";
-
-		//REJECT
-		echo"<form action=?pageW=$pageW&pageA=$pageA&pageR=$pageR&cari=$cari method='POST'>
-			<input type='hidden' name='idteam' value='".$rows['idteam']."'>
-			<input type='hidden' name='idmember' value= '".$rows['idmember']."'>
-			<input type='hidden' name='description' value= '".$rows['description']."'>
-			<input type='hidden' name='idproposal' value= '".$rows['idjoin_proposal']."'>
-			<input type='hidden' name='process' value= 'edit'>
-			<td> <input type='hidden' name='status' value= 'rejected'>
-			<button type='submit'>Reject</button> </form> </td>";
+		//DELETE
+		echo "<td> <form action='?pageW=$pageW&pageA=$pageA&pageR=$pageR&cari=$cari' method='POST'>
+			<input type='hidden' name='idproposal' value='".htmlspecialchars($rows['idjoin_proposal'])."'>
+			<input type='hidden' name='process' value= 'delete'>
+			<button type='submit'>Cancel</button> </form> </td> </tr>";
 	}
 	echo "</table>" ;
 
-	$res = $prop->getProposal($cari, null, null, null, "waiting");
+	$res = $prop->getProposal($cari, null, null, $_SESSION['userid'], "waiting");
 	$totalDataW = $res -> num_rows;
 	echo bunchProposal($cari, $totalDataW, $limit, $pageW, $pageW, $pageA, $pageR, "W");
+
+	if(isset($_POST["action"])){
+		if($_POST["action"] == "add"){
+			echo "<br><br>";
+			echo "<form action='?pageW=$pageW&pageA=$pageA&pageR=$pageR&cari=$cari' method='POST' enctype='multipart/form-data'>";
+			echo "<label>ADD PROPOSAL</label>";
+			echo "<input type='hidden' name='process' value= 'add'>";
+
+			$teamQuerry = $team->getTeam();
+			echo "<p><label>Team: </label>";
+			echo "<select name=idteam>";
+			while ($teams=$teamQuerry->fetch_assoc()) {
+				if(!in_array($teams['idteam'], $unavailableTeamID)){ //IF IT HASNT BEEN ADDED ADD TO SELECT
+					echo "<option value=".htmlspecialchars($teams['idteam']).">".htmlspecialchars($teams['teamname'])."</option>";
+				}
+			}
+			echo "</select></p>";
+
+			echo "<p><label>Description:</label> <input type='text' name='description' required>";
+			echo "<button type='submit'>Save</button></p>
+			</form>";
+		}
+	}
 ?>
 	<br><br>
 <?php //TABLE DISPLAY APPROVED
@@ -149,7 +191,7 @@
 		<th colspan=2>Status</th>
 	</tr>';
 
-	$proposals = $prop->getProposal($cari, $offsetA, $limit, null, "approved");
+	$proposals = $prop->getProposal($cari, $offsetA, $limit, $_SESSION['userid'], "approved");
 	while($rows = $proposals->fetch_assoc()) {
 		echo "<tr>";
 		echo "<td>". $rows['fname'].' "'.$rows['username'].'" '.$rows['lname'] ."</td>";
@@ -159,7 +201,7 @@
 	}
 	echo "</table>" ;
 
-	$res = $prop->getProposal($cari, null, null, null, "approved");
+	$res = $prop->getProposal($cari, null, null, $_SESSION['userid'], "approved");
 	$totalDataA = $res -> num_rows;
 	echo bunchProposal($cari, $totalDataA, $limit, $pageA, $pageW, $pageA, $pageR, "A");
 ?>
@@ -176,7 +218,7 @@
 		<th colspan=2>Status</th>
 	</tr>';
 
-	$proposals = $prop->getProposal($cari, $offsetR, $limit, null, "rejected");
+	$proposals = $prop->getProposal($cari, $offsetR, $limit, $_SESSION['userid'], "rejected");
 	while($rows = $proposals->fetch_assoc()) {
 		echo "<tr>";
 		echo "<td>". $rows['fname'].' "'.$rows['username'].'" '.$rows['lname'] ."</td>";
@@ -186,12 +228,12 @@
 	}
 	echo "</table>" ;
 
-	$res = $prop->getProposal($cari, null, null, null, "rejected");
+	$res = $prop->getProposal($cari, null, null, $_SESSION['userid'], "rejected");
 	$totalDataR = $res -> num_rows;
 	echo bunchProposal($cari, $totalDataR, $limit, $pageR, $pageW, $pageA, $pageR, "R");
 ?>
 
-<p><a href="index.php">Back to Admin Page</a></p>
+<p><a href="index.php">Back to Member Page</a></p>
 </div>
 </body>
 </html>

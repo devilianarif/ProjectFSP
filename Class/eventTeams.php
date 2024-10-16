@@ -6,7 +6,7 @@ class EventTeam extends ParentClass{
 		parent::__construct();
 	}
 
-	public function getEventTeam($idevent=null, $cari="", $offset=null, $limit=null, $idteam=null){
+	public function getEventTeam($idevent=null, $idteam=null, $cari="", $offset=null, $limit=null){
 		$cari_persen = "%".$cari."%";
 
 		if (!is_null($idteam) && !is_null($idevent)) {
@@ -57,7 +57,6 @@ class EventTeam extends ParentClass{
 		$stmt -> bind_param("ii", $idevent, $idteam);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 
 	public function updateEventTeam($idteam, $idevent)
@@ -67,7 +66,6 @@ class EventTeam extends ParentClass{
 		$stmt -> bind_param("ii", $idteam, $idevent);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 
 	public function deleteEventTeam($idevent, $idteam){
@@ -76,7 +74,6 @@ class EventTeam extends ParentClass{
 		$stmt -> bind_param("ii", $idevent, $idteam);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 }
 

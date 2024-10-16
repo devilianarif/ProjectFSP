@@ -10,8 +10,8 @@
 	    $res = $member->getMember(null,null,null,$_SESSION['userid']);
 	    $loggedUser = $res->fetch_assoc();
 
-	    if($loggedUser["profile"]!="admin"){ header("location: ..\loginui.php"); }
-   	} else{ header("location: ..\loginui.php"); }
+	    if($loggedUser["profile"]!="admin"){ header("location: ..\index.php"); }
+   	} else{ header("location: ..\index.php"); }
 ?>
 
 <?php
@@ -38,42 +38,70 @@
 		$page = $_GET['page'];
 		$offset = ($page-1) * $limit;
 	}
-?>
-	
-<?php
-	if(isset($_POST["process"])){
-		if($_POST["process"] == 'delete'){
-			echo $eventTeam->deleteEventTeam($_POST['idevent'], $_POST['idteam']);
-		} else if ($_POST["process"] == 'add'){
-			
-			$userCheck = $eventTeam->getEventTeam($_POST['idevent'], null, null, $_POST['team'])->fetch_assoc();
-			if(isset($userCheck)){
-				echo "Team Already Added";
-			}
 
-			else{
-				if(!empty($_POST['idevent']) && !empty($_POST['team'])){
-					echo $eventTeam->insertEventTeam($_POST['idevent'], $_POST['team']);
-				} else{
-					echo "Add Failed";
-				}
-			}
+	if(isset($_GET['idevent'])){ //STOP TOUCHING THE URL, GET IS FOR YOUR CONVENIENCE 
+		$userUsil = $event->getEvent(null, null, null, $_GET['idevent'])->fetch_assoc();
+		if(!isset($userUsil)){
+			header("location: eventListDisplay.php");
 		}
+	} else{
+		header("location: eventListDisplay.php");
 	}
-?>
 
+?>
 
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Admin Event Display</title>
+	<style type="text/css">
+		body{ 
+			font-family: "Arial"; 
+			margin: 0px;
+		}
+		.tempTop{
+			background-color: #00193d;
+			height: 50px;
+			width: 100%;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 50px;
+			padding-left: 5%; 
+		}
+		.content{
+			margin: 10px;
+		}
+	</style>
 </head>
 <body>
+<div class="tempTop">
+	<h1 style="color: #f8f9fa; margin: 0px; float: left;">INFORMATICS</h1>
+</div>
+<?php
+	if(isset($_POST["process"])){
+		if($_POST["process"] == 'delete'){
+			echo $eventTeam->deleteEventTeam($_GET['idevent'], $_POST['idteam']);
+		} else if ($_POST["process"] == 'add'){
+			if(!empty($_GET['idevent']) && !empty($_POST['team'])){
 
+				$teamCheck = $eventTeam->getEventTeam($_GET['idevent'], $_POST['team'])->fetch_assoc();
+				if(isset($teamCheck)){
+					echo "Team Already Added";
+				} else{
+					echo $eventTeam->insertEventTeam($_GET['idevent'], $_POST['team']);
+				}
+
+			} else{
+				echo "Add Failed";
+			}
+		}
+	}
+?>
+<div class="content">
 <?php //TABLE DISPLAY
 	
-	$events = $event->getEvent($cari, $offset, $limit);
+	$events = $event->getEvent(null, null, null, $_GET['idevent']);
 	$eventDet = $events->fetch_assoc();
 
 	echo "<table border='1'>
@@ -82,15 +110,15 @@
 
 		<td> <form action='eventDisplay.php?idevent=".$_GET['idevent']."&page=$page&cari=$cari' method='POST'>
 		<input type='hidden' name='action' value= 'add'>
-		<button type='submit'>Tambah Team</button> </form> </td>
+		<button type='submit'>Add Team</button> </form> </td>
 	</tr>
 	<tr> 
 		<th>Date</th>
 		<th>Team</th> 
-		<th>Aksi</th>
+		<th>Action</th>
 	</tr>";
 
-	$events = $eventTeam->getEventTeam($_GET['idevent'], $cari, $offset, $limit);
+	$events = $eventTeam->getEventTeam($_GET['idevent'], null, $cari, $offset, $limit);
 
 	$index = 0;
 	while($eventsRow = $events->fetch_assoc()) {
@@ -104,11 +132,11 @@
 			<input type='hidden' name='idteam' value= '".htmlspecialchars($eventsRow['idteam'])."'>
 			<input type='hidden' name='process' value= 'delete'>
 			<input type='hidden' name='idevent' value= '".$_GET['idevent']."'>
-			<button type='submit'>Keluarkan</button> </form> </td> </tr>";
+			<button type='submit'>Remove</button> </form> </td> </tr>";
 	}
 	echo "</table>" ;
 
-	$res = $eventTeam->getEventTeam($_GET['idevent'], $cari);
+	$res = $eventTeam->getEventTeam($_GET['idevent'], null, $cari);
 	$totalData = $res -> num_rows;
 	$special = "idevent=".$_GET['idevent'];
 	echo generate_page($cari, $totalData, $limit, $page, $special); 
@@ -152,7 +180,7 @@
 		}
 	?>
 </div>
-
+</div>
 
 </body>
 </html>

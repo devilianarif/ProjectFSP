@@ -50,18 +50,6 @@ class Achievement extends ParentClass{
 		$res = $stmt->get_result();
 
 		return $res; 
-	} 
-
-	public function getTeamAchv($idteam, $offset=null, $limit=null){ //WIP
-		$sql = "SELECT idachievement, achievement.idteam, achievement.name as achievementName, date, description, team.name as teamName 
-				FROM achievement INNER JOIN team ON achievement.idteam = team.idteam WHERE achievement.idteam=? Limit ?,?;";
-
-		$stmt = $this->conn->prepare($sql);
-		$stmt -> bind_param("iii", $idteam, $offset, $limit);
-		$stmt->execute();
-		$res = $stmt->get_result();
-
-		return $res; 
 	}
 
 	public function insertAchv($idteam, $name, $date, $desc){
@@ -70,7 +58,6 @@ class Achievement extends ParentClass{
 		$stmt -> bind_param("isss", $idteam, $name, $date, $desc);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 
 	public function updateAchv($idteam, $name, $date, $desc, $idachv)
@@ -80,7 +67,6 @@ class Achievement extends ParentClass{
 		$stmt -> bind_param("isssi", $idteam, $name, $date, $desc, $idachv);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 
 	public function deleteAchv($idachv){
@@ -89,7 +75,6 @@ class Achievement extends ParentClass{
 		$stmt -> bind_param("i", $idachv);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 }
 

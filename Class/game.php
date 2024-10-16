@@ -33,13 +33,22 @@ class Game extends ParentClass{
 		return $res; 
 	} 
 
+	public function nameCheck($name=null){
+		$sql = "SELECT * from game WHERE name = ?;";
+		$stmt = $this->conn->prepare($sql);
+		$stmt -> bind_param("s", $name);
+		$stmt->execute();
+		$res = $stmt->get_result();
+		
+		return $res; 
+	} 
+
 	public function insertGame($name,$desc){
 		$sql = "INSERT INTO game (name, description) VALUES (?, ?);";
 		$stmt = $this->conn->prepare($sql);
 		$stmt -> bind_param("ss", $name, $desc);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 
 	public function updateGame($name, $desc, $idgame)
@@ -49,7 +58,6 @@ class Game extends ParentClass{
 		$stmt -> bind_param("ssi", $name, $desc, $idgame);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 
 	public function deleteGame($idgame){
@@ -58,7 +66,6 @@ class Game extends ParentClass{
 		$stmt -> bind_param("i", $idgame);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 }
 

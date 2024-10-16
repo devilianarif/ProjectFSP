@@ -65,7 +65,6 @@ class Member extends ParentClass{
 		$stmt -> bind_param("ssssi", $fname, $lname, $username, $password, $idmember);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 
 	public function deleteMember($idmember){
@@ -74,7 +73,6 @@ class Member extends ParentClass{
 		$stmt -> bind_param("i", $idmember);
 		
 		$stmt->execute();
-		$res = $stmt->get_result();
 	}
 
 	public function login($username, $password) {
